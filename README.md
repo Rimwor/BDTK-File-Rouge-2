@@ -1,4 +1,4 @@
-# FIL ROUGE 1 : BDTK - AFPA CAEN (2021)
+# FIL ROUGE 2 : BDTK - AFPA CAEN (2021)
 Développer une application Web Back-End
 
 Binôme : Beata - Alexandre
