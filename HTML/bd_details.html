@@ -1,0 +1,194 @@
+<html lang="fr">
+<!-- ======================================================== START ================================================================ -->
+<!-- MAIN CONTAINER -->
+<!-- MAIN CONTAINER : class="container-fluid" -->
+
+<!-- HEADER : class="header" -->
+<!-- DIV : class="row" -->
+<!-- DIV 1 : class="cell1" -->
+<!-- IMG HELP : class="img_help" -->
+<!-- DIV 1 : class="cell2" -->
+<!-- DIV 1 : class="cell3" -->
+<!-- USER STATUS : id="user_status" -->
+<!-- USER NAME : id="user_name" -->
+
+<!-- MIDDLE DIV -->
+<!-- MIDDLE DIV : class="middle_div" -->
+<!-- BURGER MENU -->
+<!-- BURGER button : id="context_toggle" -->
+<!-- MENU UL : class="d-menu" -->
+
+<!-- CENTER DIV : -->
+<!-- HEADING : class="div_heading" -->
+<!-- CENTER DIV : class="center_row" -->
+<!-- TABLE -->
+<!-- DESCRIPTION -->
+<!-- COVER IMG -->
+<!-- BUTTONS : -->
+<!-- BACK BUTTON / & / BORROW BUTTON -->
+<!-- BACK : id="btn_back" -->
+<!-- PRINT : id="btn_print" -->
+
+<!-- ======================================================== HEAD ================================================================= -->
+
+<head>
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+    <title>| Détails de BD | Bédéthèque de Stockholm</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="CSS/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="CSS/metro/metro-all.css">
+    <link rel="stylesheet" href="CSS/fontawasome/fontawesome.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
+
+    <link rel="stylesheet" href="CSS/bd_details.css">
+
+</head>
+<!-- ======================================================== BODY ================================================================= -->
+
+<body>
+
+    <body background="MEDIA\bdthequebackground.jpg" style="background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;" alt="background">
+
+        <!-- MAIN CONTAINER -->
+        <div class="container-fluid">
+
+            <!-- HEADER -->
+            <header class="header">
+                <div class="row">
+                    <div class="cell1">
+                        <a href="help.html" target="_blank">
+                            <img src="MEDIA\help.png" class="img_help" alt="help" /></a>
+                    </div>
+
+                    <div class="cell2">
+                    </div>
+
+                    <div class="cell3">
+                        <span class="">Bienvenue sur votre compte </span><span id="user_status"></span><span>, </span><span id="user_name"></span> !</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MIDDLE DIV -->
+            <div class="middle_div border">
+
+                <div class="burger_menu">
+                    <a class="button" id="context_toggle"><i class="fas fa-bars"></i></a>
+                    <ul class="d-menu context drop-down-right" data-role="dropdown" data-toggle-element="#context_toggle">
+                        <li id="profile"><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+                        <li class="divider"></li>
+                        <li id="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Deconnection</a></li>
+                    </ul>
+                </div>
+
+                <!-- CENTER DIV -->
+                <div class="div_heading">&nbsp&nbsp Détails de BD &nbsp&nbsp</div>
+
+                <div class="center_row row">
+
+                    <!-- ==================================================================================================== -->
+                    <div class="cell4 cell colspan-lg-8 colspan-fs-12 colspan-sm-12 colspan-md-12 flex-align-self-stretch mt-5">
+
+                        <!-- TABLE -->
+                        <table class="table table-border cell-border">
+                            <tbody>
+
+                                <tr>
+                                    <td class="cat1"><label for="id">ISBN :</label></td>
+                                    <td class="cat2">
+                                        <input type="number" data-role="input" required id="id" value="0" min="0" readonly>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cat1"><label for="serie">Série :</label></td>
+                                    <td class="cat2">
+                                        <input type="text" data-role="input" id="serie" readonly>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cat1"><label for="numero">Album N° :</label></td>
+                                    <td class="cat2">
+                                        <input type="text" data-role="input" id="numero" readonly>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cat1"><label for="titre">Titre :</label></td>
+                                    <td class="cat2">
+                                        <input type="text" data-role="input" id="titre" readonly>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cat1"><label for="auteur">Auteur :</label></td>
+                                    <td class="cat2">
+                                        <input type="text" data-role="input" id="auteur" readonly>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cat1"><label for="prix">Prix :</label></td>
+                                    <td class="cat2">
+                                        <input type="number" data-role="input" id="prix" readonly>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div is="toto">
+                            <img src="MEDIA/images/noComicsMini.jpeg" id="albumMini">
+                        </div>
+
+
+                    </div>
+
+                    <!-- COVER IMG -->
+                    <div class="cell5 cell colspan-3 offset-1 flex-align-self-stretch">
+                        <img src="MEDIA/images/noComics.jpeg" id="album" class="img_cover img-fluid rounded float-end bottom" alt="BD cover">
+                    </div>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="btns_div d-flex flex-justify-start">
+
+                    <!-- BACK / CANCEL // for ALL  -->
+                    <div>
+                        <button id="btn_back" class="button justify-content-md-start stick-bottom">
+                            <i class="fas fa-chevron-left"></i> &nbsp Annuler
+                            </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+    <!-- ========================================================= JS ================================================================== -->
+
+    <!-- JAVA SCRIPT -->
+    <script src="JS/jquery.js"></script>
+    <script src="JS/metro.js"></script>
+    <script src="JS/all.js"></script>
+    <script src="JS/back.js"></script>
+    <script src="JS/auteurs.js"></script>
+    <script src="JS/albums.js"></script>
+    <script src="JS/series.js"></script>
+    <script src="JS/test_profils.js"></script>
+    <script src="JS/bd_details.js"></script>
+    <script src="JS/menu.js"></script>
+
+    <!-- ======================================================== END ================================================================== -->
+
+</html>

@@ -1,0 +1,291 @@
+/* ========================================================== BODY =================================================================== */
+
+
+/* BODY */
+
+
+/* ========================================================== BODY =================================================================== */
+
+html {
+    font-size: 20px !important;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+}
+
+@media screen and (min-width: 560px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 630px) {
+    html {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 810px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    html {
+        font-size: 20px !important;
+    }
+}
+
+
+/* ========================================================== MAIN CONTAINER ========================================================= */
+
+
+/* MAIN CONTAINER */
+
+.container-fluid {
+    padding: 10px !important;
+}
+
+
+/* ========================================================== HEADER ================================================================= */
+
+
+/* HEADER */
+
+
+/* IMG HELP */
+
+.img_help {
+    opacity: 40%;
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+
+.cell1 {
+    width: 5% !important;
+    min-width: 15px;
+}
+
+.cell2 {
+    width: 5% !important;
+    min-width: 15px;
+    margin-right: 10px;
+}
+
+.cell3 {
+    font-size: 25px !important;
+    width: 75% !important;
+    background-color: rgba(255, 255, 255, 0.479);
+}
+
+@media screen and (min-width: 320px) {
+    .cell3 {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .cell3 {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    .cell3 {
+        font-size: 17px !important;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .cell3 {
+        font-size: 19px !important;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .cell3 {
+        font-size: 21px !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .cell3 {
+        font-size: 25px !important;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .cell3 {
+        font-size: 35px !important;
+    }
+}
+
+
+/* ========================================================== MIDDLE DIV ============================================================= */
+
+
+/* MIDDLE DIV */
+
+.middle_div {
+    background-color: rgba(255, 255, 255, 0.479);
+    margin: auto;
+    padding: 12px;
+    width: 85% !important;
+    height: auto;
+    border: 1px solid rgb(255, 255, 255) !important;
+    position: relative;
+}
+
+
+/* BURGER MENU */
+
+.burger_menu {
+    text-align: right;
+    float: right;
+}
+
+
+/* ========================================================== CENTER DIV ============================================================= */
+
+
+/* CENTER DIV */
+
+
+/* DIV HEADING - TEXT */
+
+.div_heading {
+    background-color: rgba(37, 32, 32, 0.692) !important;
+    color: white;
+    max-width: 320px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.center_row {
+    margin-top: 5%;
+    margin-bottom: 0.5%;
+}
+
+
+/* TABLE */
+
+.table {
+    margin-left: 2% !important;
+    margin-right: 1% !important;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+td {
+    word-wrap: break-word;
+}
+
+.cat1 {
+    background-color: rgba(37, 32, 32, 0.692) !important;
+    color: white;
+    width: 120px !important;
+}
+
+.cat2 {
+    background-color: rgba(255, 255, 255, 0.63) !important;
+    max-width: 200px !important;
+}
+
+.cat1,
+.cat2 {
+    font-size: 16px !important;
+}
+
+@media screen and (min-width: 320px) {
+    .cat1,
+    .cat2 {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .cat1,
+    .cat2 {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .cat1,
+    .cat2 {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .cat1,
+    .cat2 {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .cat1,
+    .cat2 {
+        font-size: 22px !important;
+    }
+}
+
+
+/* COVER IMAGE */
+
+.cover_img_div {
+    float: right !important;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cover_img_div {
+        display: none;
+    }
+}
+
+.img_cover {
+    margin-top: 0px;
+    margin-right: 5%;
+    float: right;
+}
+
+@media only screen and (min-width: 320px) {
+    #albumMini {
+        display: auto;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #albumMini {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    #album {
+        display: none;
+    }
+}
+
+
+/* BUTTONS */
+
+.btns_div {
+    margin-top: 5% !important;
+}
+
+
+/* ========================================================== BODY END =============================================================== */
