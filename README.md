@@ -11,13 +11,6 @@ _« Le service culturel d’une grande agglomération veut améliorer la gestion
 
 _Pour cela, le service culturel met en place un nouveau logiciel de gestion des prêts. »_
 
-Ce dossier technique concerne un logiciel _application de gestion des ressources de la bédéthèque municipale_. Il se compose des éléments suivants :
-
-- analyse UML ;
-- maquettage ;
-- réalisations ;
-- essais ;
-- travail en binôme
-- ...
+Ce dossier technique concerne un logiciel _application de gestion des ressources de la bédéthèque municipale_.
 
 > Dossier technique : ... in progress ...
