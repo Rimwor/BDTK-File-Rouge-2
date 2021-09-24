@@ -17,6 +17,7 @@ Ce dossier technique concerne un logiciel _application de gestion des ressources
 - maquettage ;
 - réalisations ;
 - essais ;
-- travail en binôme.
+- travail en binôme
+- ...
 
-> Dossier technique : 
+> Dossier technique : ... in progress ...
