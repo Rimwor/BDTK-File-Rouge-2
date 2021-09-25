@@ -2,48 +2,41 @@
 
 /* ========================================================== FONT =================================================================== */
 /* FONT */
-@import url('https://fonts.googleapis.com/css?family=Almendra:400');
+@import url('https://fonts.googleapis.com/css?family=Trade+Winds:400');
+@import url('https://fonts.googleapis.com/css?family=Pirata+One:400');
 
 html {font-size: 100%;} /*16px*/
 
-body {
+.welcome {
   /* background: white; */
-  font-family: 'Almendra', serif;
+  font-family: 'Trade Winds', sans-serif;
   font-weight: 400;
   line-height: 1.75;
-  color: #000000;
+  color: #c9c5c5 !important;
+}
+
+body {
+  /* background: white; */
+  font-family: 'Pirata One', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #363434;
 }
 
 p {margin-bottom: 1rem;}
 
-h1, h2, h3, h4, h5 {
+h1 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Almendra', serif;
+  font-family: 'Trade Winds', sans-serif;
   font-weight: 400;
   line-height: 1.3;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 3.052rem;
-}
-
-h2 {font-size: 2.441rem;}
-
-h3 {font-size: 1.953rem;}
-
-h4 {font-size: 1.563rem;}
-
-h5 {font-size: 1.25rem;}
-
-small, .text_small {font-size: 0.8rem;}
-
-/* BIENVENUE */
-.bienvenue {
-  color: #bc2e1e;
-  color: #e9dbdb;
-  /* background: #996D6D; */
-  text-shadow: #2e2828 3px 5px 2px;
+h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Pirata One', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 /* ========================================================== IMG ==================================================================== */
@@ -53,6 +46,13 @@ small, .text_small {font-size: 0.8rem;}
     width: 100%;
     max-width: 30px;
     height: auto;
+}
+
+.mascot {
+  width: 100%;
+  max-width: 90px;
+  height: auto;
+  padding: 2px;
 }
 
 /* ========================================================== FOOTER ================================================================= */

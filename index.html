@@ -31,6 +31,8 @@
     <title>Bienvenue à la bédéthèque de Stockholm</title>
 
     <!-- STYLES -->
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
+
     <link rel="stylesheet" href="ASSETS/CSS/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="ASSETS/CSS/bootstrap/_bootswatch.scss">
     <link rel="stylesheet" href="ASSETS/CSS/bootstrap/_variables.scss">
@@ -39,18 +41,16 @@
 
     <link rel="stylesheet" href="ASSETS/CSS/index.css">
 
-    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
-
 </head>
 <!-- ======================================================== BODY ================================================================= -->
 
 <body>
 
-    <body background="ASSETS\MEDIA\bdthequebackground.jpg" alt="background">
+    <body background="ASSETS/MEDIA/bdthequebackground.jpg" alt="background">
 
         <!-- HEADER -->
         <header>
-            <a href="HTML\help.html" target="_blank">
+            <a href="help.html" target="_blank">
                 <img src="ASSETS\MEDIA\help.png" class="img_help ml-1 mt-1" alt="help" />
             </a>
         </header>
@@ -59,9 +59,9 @@
         <div class="container-fluid">
 
             <!-- CONNECTION FORM -->
-            <div class="container-md align-self-auto bg-secondary p-5-md mt-10-md mt-15-sm mt-15-fs text-light bg-opacity-75 border">
+            <div class="container-md align-self-auto bg-secondary p-5-md mt-10-md mt-15-sm mt-15-fs bg-opacity-85 border">
                 
-                <div class="mb-3 mt-3 fs-4 text-center">
+                <div class="mb-5 mt-3 fs-4 text-center">
                     <h1 class="bienvenue">Bienvenue</h1>
                 </div>
 
@@ -69,14 +69,14 @@
 
                     <!-- USER ID -->
                     <div class="mb-3 mt-3 fs-4">
-                        <label for="username">Entrez votre identifiant personnel :</label>
+                        <label for="username">Entrez votre identifiant personnel&nbsp:</label>
                         </br>
                         <input id="username" class="metro-input" placeholder="  Votre identifiant personnel" type="text" name="username" maxlength="10" style="-webkit-text-security: disc;" required/>
                     </div>
 
                     <!-- PIN -->
                     <div class="mb-3 fs-4">
-                        <label for="password" class="form-label">Saisie votre code PIN :</label>
+                        <label for="password" class="form-label">Saisie votre code PIN&nbsp:</label>
                         <!-- KEY PAD -->
                         <div class="row">
                             <div class="cell-md-6 fs-4">
@@ -89,7 +89,7 @@
 
                 <!-- SUBMIT -->
                 <div class="text-right">
-                    <button id="btn_confirm" type="submit" class="btn btn-secondary">Confirmer</button>
+                    <button id="btn_confirm" type="submit" class="btn btn-light mb-2">Confirmer</button>
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <a href="HTML\mot_de_passe_oublie.html" target="_blank">
+            <a href="mot_de_passe_oublie.html" target="_blank">
                 <!-- PASSWORD FORGOT BUTTON -->
                 <button class="button"><i class="fas fa-unlock-alt"></i>&nbspMot de passe oublié</button>
             </a>
