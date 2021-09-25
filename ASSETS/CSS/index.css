@@ -2,14 +2,14 @@
 
 /* ========================================================== FONT =================================================================== */
 /* FONT */
-@import url('https://fonts.googleapis.com/css?family=Trade+Winds:400');
+@import url('https://fonts.googleapis.com/css?family=Dela+Gothic+One:400');
 @import url('https://fonts.googleapis.com/css?family=Pirata+One:400');
 
 html {font-size: 100%;} /*16px*/
 
 .welcome {
   /* background: white; */
-  font-family: 'Trade Winds', sans-serif;
+  font-family: 'Dela Gothic One', sans-serif;
   font-weight: 400;
   line-height: 1.75;
   color: #c9c5c5 !important;
@@ -27,7 +27,7 @@ p {margin-bottom: 1rem;}
 
 h1 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Trade Winds', sans-serif;
+  font-family: 'Dela Gothic One', sans-serif;
   font-weight: 400;
   line-height: 1.3;
 }
@@ -48,11 +48,8 @@ h2, h3, h4, h5 {
     height: auto;
 }
 
-.mascot {
-  width: 100%;
-  max-width: 90px;
-  height: auto;
-  padding: 2px;
+.line {
+  opacity: 40%;
 }
 
 /* ========================================================== FOOTER ================================================================= */
