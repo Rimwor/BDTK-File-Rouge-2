@@ -70,13 +70,29 @@
      * @param string $file_name
      * @return void
      */
-    function readUsers($utilisateur_id, $file_name) {
+    function readUsers($utilisateur_id, $utilisateur_mdp, 
+                       $utilisateur_login, $utilisateur_mail, 
+                       $utilisateur_nom, $utilisateur_prenom,
+                       $utilisateur_adr_num_rue, 
+                       $utilisateur_adr_cp, $utilisateur_tel, 
+                       $ville_id, $role_id, $file_name) {
         if (file_exists($file_name)) {
             $tSearch = array();
             $tab = getAllUsers($file_name);
             foreach ($tab as $user) {
-                $tUser = explode(";", $user);
-                if (   (empty($utilisateur_id) || stristr($tUser[0], $utilisateur_id)))
+                $tUser = explode(",", $user);
+                if (   (empty($utilisateur_id) || stristr($tUser[0], $utilisateur_id))
+                    && (empty($utilisateur_mdp) || stristr($tUser[1],  $utilisateur_mdp))
+                    && (empty($utilisateur_login) || stristr($tUser[2], $utilisateur_login))
+                    && (empty($utilisateur_mail) || stristr($tUser[3], $utilisateur_mail))
+                    && (empty($utilisateur_nom) || stristr($tUser[4], $utilisateur_nom))
+                    && (empty($utilisateur_prenom) || stristr($tUser[5], $utilisateur_prenom))
+                    && (empty($utilisateur_adr_num_rue) || stristr($tUser[6], $utilisateur_adr_num_rue))
+                    && (empty($utilisateur_adr_cp) || stristr($tUser[7], $utilisateur_adr_cp))
+                    && (empty($utilisateur_tel) || stristr($tUser[8], $utilisateur_tel))
+                    && (empty($ville_id) || stristr($tUser[9], $ville_id))
+                    && (empty($role_id) || stristr($tUser[10], $role_id))
+                )
                     $tSearch[] = $user;
             }
             return $tSearch;

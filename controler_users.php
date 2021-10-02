@@ -101,7 +101,12 @@
             break;
         case 'readUserOK' :
             $title = 'SUCCESFUL USER SEARCH';
-                $tLignes = readUsers($utilisateur_id, $file_name);
+                $tLignes = readUsers($utilisateur_id, $utilisateur_mdp, 
+                                     $utilisateur_login, $utilisateur_mail, 
+                                     $utilisateur_nom, $utilisateur_prenom,
+                                     $utilisateur_adr_num_rue, 
+                                     $utilisateur_adr_cp, $utilisateur_tel, 
+                                     $ville_id, $role_id, $file_name);
                 if (count($tLignes) == 0)
                     $info = "Il n'y a aucun utilisateur sur la liste qui correspond aux exigences ... ";
                 elseif (count($tLignes) > 1)

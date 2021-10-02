@@ -13,7 +13,7 @@
                     <br />
             </p>
 
-        <?php if ($action != 'readUser') { ?> 
+        
             <label for="idRole">Rôle d'Utilisateur: </label>
             <input type="text" name="role" id="idRole"
                     value=""/>
@@ -75,7 +75,7 @@
                     value=""/>
                     <br />
             </p>
-        <?php } ?>
+        
 
         <input type="hidden" name="action" value="<?php echo $action . "OK" ?>" />
         <input type="submit" value="Submit" />
