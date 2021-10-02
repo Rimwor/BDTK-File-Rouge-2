@@ -9,3 +9,4 @@ USER08,afpa,ah_04,adherent04@gmail.com,Krzyzosiak,Beata,Rue Fantastic 08,14220,0
 USER09,afpa,ah_05,adherent05@gmail.com,Paimblanc,Cedric,Rue Fantastic 09,14220,0606080909,VIL01,ah001
 USER10,afpa,ah_06,adherent06@gmail.com,Urbani,Louis,Rue Fantastic 10,14220,0606090909,VIL01,ah001
 USER11,afpa,ah_07,adherent07@gmail.com,Villard,Manon,Rue Fantastic 11,14220,0607090909,VIL01,ah001
+USER12,afpa,ah_08,doris@gmail.com,Krzyzosiak,Dorota,Topolowa 6,56120,0684183086,VIL02,ah001

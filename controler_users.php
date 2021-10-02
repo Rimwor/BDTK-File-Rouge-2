@@ -8,7 +8,7 @@
     
     $action = 'welcome';
    
-    $utilisateur_id = $utilisateur_mdpb = $utilisateur_login 
+    $utilisateur_id = $utilisateur_mdp = $utilisateur_login 
     = $utilisateur_mail = $utilisateur_nom = $utilisateur_prenom
     = $utilisateur_adr_num_rue = $utilisateur_adr_cp
     = $utilisateur_tel = $ville_id = $role_id = '';
@@ -18,10 +18,22 @@
         $action = $_GET['action'];
     }
 
-    if(isset($_GET['name'], $_GET['lastname'], $_GET['phone'])) {
-        $name = $_GET['name'];
-        $lastname = $_GET['lastname'];
-        $phone = $_GET['phone'];
+    if(isset($_GET['id'], $_GET['role'], $_GET['nom'],
+             $_GET['prenom'], $_GET['login'], 
+             $_GET['motpasse'], $_GET['adresse'],
+             $_GET['codepostale'], $_GET['idVille'],
+             $_GET['mail'], $_GET['tel'])) {
+        $utilisateur_id = $_GET['id'];
+        $role_id = $_GET['role'];
+        $utilisateur_nom = $_GET['nom'];
+        $utilisateur_prenom = $_GET['prenom'];
+        $utilisateur_login = $_GET['login'];
+        $utilisateur_mdp = $_GET['motpasse'];
+        $utilisateur_adr_num_rue = $_GET['adresse'];
+        $utilisateur_adr_cp = $_GET['codepostale'];
+        $ville_id = $_GET['idVille'];
+        $utilisateur_mail =  $_GET['mail'];
+        $utilisateur_tel = $_GET['tel'];
     }
 
     // ECHOs ....................................................................................... //
@@ -34,8 +46,8 @@
 
         // WELCOME : ------------------------------------------------------------------------------- //
         case 'welcome':
-            $title = 'WELCOME in Your Contact Book';
-            $info = '';
+            $title = "Gestion d'Utilisateurs";
+            $info = "";
                 require('view/view_header.php'); 
                 require('view/view_welcome.php'); 
                 require('view/view_footer.php');
@@ -43,9 +55,36 @@
         
         // CONTACT LIST ---------------------------------------------------------------------------- //
         case 'listeUtilisateurs':
-            $title = 'Liste de Utilisateurs :';
-            $info = '';
+            $title = "Liste d'Utilisateurs :";
+            $info = "";
                 $tLignes = getAllUsers($file_name);
+                require('view/view_header.php'); 
+                require('view/view_usersList.php'); 
+                require('view/view_footer.php');
+            break;
+
+        // ADD NEW USER ------------------------------------------------------------------------- //
+        case 'createUser':
+            $title = "AJOUT D'UN NOUVEL UTILISATEUR";
+            $info = "";
+                require('view/view_header.php'); 
+                require('view/view_userForm.php'); 
+                require('view/view_footer.php');
+            break;
+        case 'createUserOK' :
+            $title = "CRÉATION D'UTILISATEURS RÉUSSIE";
+            $info = "L'utilisateur a été créé avec succès";
+                createUser($utilisateur_id, $utilisateur_mdp,
+                $utilisateur_login, $utilisateur_mail, 
+                $utilisateur_nom, $utilisateur_prenom, 
+                $utilisateur_adr_num_rue, $utilisateur_adr_cp, 
+                $utilisateur_tel, $ville_id, $role_id, $file_name);
+                $tLignes[] = "\n" . $utilisateur_id . ","
+                . $utilisateur_mdp . ",". $utilisateur_login . ","
+                . $utilisateur_mail . "," . $utilisateur_nom . ","
+                . $utilisateur_prenom . "," . $utilisateur_adr_num_rue . ","
+                . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
+                . $ville_id . "," . $role_id;  
                 require('view/view_header.php'); 
                 require('view/view_usersList.php'); 
                 require('view/view_footer.php');
