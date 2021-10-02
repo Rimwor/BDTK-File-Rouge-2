@@ -2,8 +2,10 @@
 <?php 
 
     // function getDataBaseConnetion() {
-        
+    //     ...
     // }
+
+    
     /**
      * 
      * USER LIST : getting a full list of users
@@ -39,7 +41,7 @@
      * @param string $utilisateur_adr_num_rue
      * @param string $utilisateur_adr_cp
      * @param string $utilisateur_tel
-     * @param integer $ville_id
+     * @param string $ville_id
      * @param string $role_id
      * @param string $file_name
      * @return void
@@ -65,8 +67,19 @@
 
     /**
      * USER SEARCH (User Read)
+     * Beata
      *
      * @param string $utilisateur_id
+     * @param string $utilisateur_mdp
+     * @param string $utilisateur_login
+     * @param string $utilisateur_mail
+     * @param string $utilisateur_nom
+     * @param string $utilisateur_prenom
+     * @param string $utilisateur_adr_num_rue
+     * @param string $utilisateur_adr_cp
+     * @param string $utilisateur_tel
+     * @param string $ville_id
+     * @param string $role_id
      * @param string $file_name
      * @return void
      */
@@ -101,17 +114,108 @@
         }
     }
 
-    function updateUser($utilisateur_id, $utilisateur_mdp, 
-                        $utilisateur_login,$utilisateur_mail, 
-                        $utilisateur_nom, $utilisateur_prenom,
-                        $utilisateur_adr_num_rue, 
-                        $utilisateur_adr_cp, $utilisateur_tel, 
-                        $ville_id, $role_id, $file_name) {
-        
+    /**
+     * USER DELETE
+     * Beata
+     *
+     * @param string $utilisateur_id
+     * @param string $utilisateur_mdp
+     * @param string $utilisateur_login
+     * @param string $utilisateur_mail
+     * @param string $utilisateur_nom
+     * @param string $utilisateur_prenom
+     * @param string $utilisateur_adr_num_rue
+     * @param string $utilisateur_adr_cp
+     * @param string $utilisateur_tel
+     * @param string $ville_id
+     * @param string $role_id
+     * @param string $file_name
+     * @return void
+     */
+    function deleteUser(string $utilisateur_id, string $utilisateur_mdp, 
+                        string $utilisateur_login, string $utilisateur_mail, 
+                        string $utilisateur_nom, string $utilisateur_prenom,
+                        string $utilisateur_adr_num_rue, 
+                        string $utilisateur_adr_cp, string $utilisateur_tel, 
+                        string $ville_id, string $role_id, string $file_name) : void {
+        if (file_exists($file_name)) {
+            $user = "\n" . $utilisateur_id . ","
+            . $utilisateur_mdp . ",". $utilisateur_login . ","
+            . $utilisateur_mail . "," . $utilisateur_nom . ","
+            . $utilisateur_prenom . "," . $utilisateur_adr_num_rue . ","
+            . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
+            . $ville_id . "," . $role_id;
+            $tab = getAllUsers($file_name);
+            $key = array_search($user, $tab);
+            unset ($tab[$key]);
+
+            file_put_contents($file_name, implode("\n", $tab));
+        } else {
+            die ("Le fichier " . $file_name . " n'existe pas !!");
+        }
     }
 
-    function deleteUser($utilisateur_id) {
-        
+    /**
+     * USER EDIT (UPDATE)
+     * Beata
+     *
+     * @param string $utilisateur_idOLD
+     * @param string $utilisateur_mdpOLD
+     * @param string $utilisateur_loginOLD
+     * @param string $utilisateur_mailOLD
+     * @param string $utilisateur_nomOLD
+     * @param string $utilisateur_prenomOLD
+     * @param string $utilisateur_adr_num_rueOLD
+     * @param string $utilisateur_adr_cpOLD
+     * @param string $utilisateur_telOLD
+     * @param string $ville_idOLD
+     * @param string $role_idOLD
+     * @param string $utilisateur_idNEW
+     * @param string $utilisateur_mdpNEW
+     * @param string $utilisateur_loginNEW
+     * @param string $utilisateur_mailNEW
+     * @param string $utilisateur_nomNEW
+     * @param string $utilisateur_prenomNEW
+     * @param string $utilisateur_adr_num_rueNEW
+     * @param string $utilisateur_adr_cpNEW
+     * @param string $utilisateur_telNEW
+     * @param string $ville_idNEW
+     * @param string $role_idNEW
+     * @param string $file_name
+     * @return void
+     */
+    function updateUser($utilisateur_idOLD, $utilisateur_mdpOLD, 
+                        $utilisateur_loginOLD, $utilisateur_mailOLD, 
+                        $utilisateur_nomOLD, $utilisateur_prenomOLD,
+                        $utilisateur_adr_num_rueOLD, 
+                        $utilisateur_adr_cpOLD, $utilisateur_telOLD, 
+                        $ville_idOLD, $role_idOLD, 
+                        $utilisateur_idNEW, $utilisateur_mdpNEW, 
+                        $utilisateur_loginNEW, $utilisateur_mailNEW, 
+                        $utilisateur_nomNEW, $utilisateur_prenomNEW,
+                        $utilisateur_adr_num_rueNEW, 
+                        $utilisateur_adr_cpNEW, $utilisateur_telNEW, 
+                        $ville_idNEW, $role_idNEW,
+                        $file_name) {
+        if (file_exists($file_name)) {
+            $contenu = file_get_contents($file_name);
+            $contactNEW = $utilisateur_idNEW . ","
+                        . $utilisateur_mdpNEW . ",". $utilisateur_loginNEW . ","
+                        . $utilisateur_mailNEW . "," . $utilisateur_nomNEW . ","
+                        . $utilisateur_prenomNEW . "," . $utilisateur_adr_num_rueNEW . ","
+                        . $utilisateur_adr_cpNEW . "," . $utilisateur_telNEW . ","
+                        . $ville_idNEW . "," . $role_idNEW;
+            $contactOLD = $utilisateur_idOLD . ","
+                        . $utilisateur_mdpOLD . ",". $utilisateur_loginOLD . ","
+                        . $utilisateur_mailOLD . "," . $utilisateur_nomOLD . ","
+                        . $utilisateur_prenomOLD . "," . $utilisateur_adr_num_rueOLD . ","
+                        . $utilisateur_adr_cpOLD . "," . $utilisateur_telOLD . ","
+                        . $ville_idOLD . "," . $role_idOLD;
+            $contenu = str_replace($contactOLD, $contactNEW, $contenu);
+            file_put_contents($file_name, $contenu);
+            } else {
+                echo "ERREUR : src invalide ou n'existe pas.";
+        }
     }
 
 ?>

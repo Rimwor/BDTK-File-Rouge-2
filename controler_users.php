@@ -25,30 +25,44 @@
              $_GET['codepostale'], $_GET['idVille'],
              $_GET['mail'], $_GET['tel'])) {
         $utilisateur_id = $_GET['id'];
-        $role_id = $_GET['role'];
+        $utilisateur_mdp = $_GET['motpasse'];
+        $utilisateur_login = $_GET['login'];
+        $utilisateur_mail =  $_GET['mail'];
         $utilisateur_nom = $_GET['nom'];
         $utilisateur_prenom = $_GET['prenom'];
-        $utilisateur_login = $_GET['login'];
-        $utilisateur_mdp = $_GET['motpasse'];
         $utilisateur_adr_num_rue = $_GET['adresse'];
         $utilisateur_adr_cp = $_GET['codepostale'];
-        $ville_id = $_GET['idVille'];
-        $utilisateur_mail =  $_GET['mail'];
         $utilisateur_tel = $_GET['tel'];
+        $ville_id = $_GET['idVille'];
+        $role_id = $_GET['role'];       
+    }
+
+    if($action == 'éditionOK') {
+        $utilisateur_idOLD = $_GET['idOLD'];
+        $role_idOLD = $_GET['roleOLD'];
+        $utilisateur_nomOLD = $_GET['nomOLD'];
+        $utilisateur_prenomOLD = $_GET['prenomOLD'];
+        $utilisateur_loginOLD = $_GET['loginOLD'];
+        $utilisateur_mdpOLD = $_GET['motpasseOLD'];
+        $utilisateur_adr_num_rueOLD = $_GET['adresseOLD'];
+        $utilisateur_adr_cpOLD = $_GET['codepostaleOLD'];
+        $ville_idOLD = $_GET['idVilleOLD'];
+        $utilisateur_mailOLD =  $_GET['mailOLD'];
+        $utilisateur_telOLD = $_GET['telOLD'];
     }
 
     // ECHOs ....................................................................................... //
-    echo 'ACTION :'. $action . "<br />\n";
-    echo 'GET :' ; print_r($_GET) ; echo "<br />";
-    echo 'POST :' ; print_r($_POST) ; echo "<br />";
+    echo 'ACTION : '. $action . "<br />\n";
+    echo 'GET : ' ; print_r($_GET) ; echo "<br />";
+    echo 'POST : ' ; print_r($_POST) ; echo "<br />";
 
     // SWITCH ====================================================================================== //
     switch ($action) {
 
         // WELCOME : ------------------------------------------------------------------------------- //
         case 'welcome':
-            $title = "Gestion d'Utilisateurs";
-            $info = "";
+            $title = 'Gestion Utilisateurs';
+            $info = '';
                 require('view/view_header.php'); 
                 require('view/view_welcome.php'); 
                 require('view/view_footer.php');
@@ -56,8 +70,8 @@
         
         // USERS LIST ---------------------------------------------------------------------------- //
         case 'listeUtilisateurs':
-            $title = "Liste d'Utilisateurs :";
-            $info = "";
+            $title = 'Liste Utilisateurs :';
+            $info = '';
                 $tLignes = getAllUsers($file_name);
                 require('view/view_header.php'); 
                 require('view/view_usersList.php'); 
@@ -66,15 +80,15 @@
 
         // ADD NEW USER ------------------------------------------------------------------------- //
         case 'createUser':
-            $title = "AJOUT D'UN NOUVEL UTILISATEUR";
-            $info = "";
+            $title = 'AJOUT UN NOUVEL UTILISATEUR';
+            $info = '';
                 require('view/view_header.php'); 
                 require('view/view_userForm.php'); 
                 require('view/view_footer.php');
             break;
         case 'createUserOK' :
-            $title = "CRÉATION D'UTILISATEURS RÉUSSIE";
-            $info = "L'utilisateur a été créé avec succès";
+            $title = 'CRÉATION UTILISATEUR RÉUSSIE';
+            $info = 'Utilisateur a été créé avec succès';
                 createUser($utilisateur_id, $utilisateur_mdp,
                 $utilisateur_login, $utilisateur_mail, 
                 $utilisateur_nom, $utilisateur_prenom, 
@@ -93,14 +107,14 @@
 
         // USER SEARCH  ------------------------------------------------------------------------- //
         case 'readUser' :
-            $title = 'USER SEARCH';
+            $title = 'RECHERCHE UTILISATEUR';
             $info = '';
                 require('view/view_header.php'); 
                 require('view/view_userForm.php'); 
                 require('view/view_footer.php');
             break;
         case 'readUserOK' :
-            $title = 'SUCCESFUL USER SEARCH';
+            $title = 'RECHERCHE UTILISATEURS RÉUSSIE';
                 $tLignes = readUsers($utilisateur_id, $utilisateur_mdp, 
                                      $utilisateur_login, $utilisateur_mail, 
                                      $utilisateur_nom, $utilisateur_prenom,
@@ -117,6 +131,63 @@
                 require('view/view_header.php'); 
                 require('view/view_usersList.php'); 
                 require('view/view_footer.php');
+            break;
+        
+        // USER DELETE  ------------------------------------------------------------------------- //
+        case 'effacer' :
+            $title = 'SUPPRIMER UTILISATEUR';
+            $info = 'Utilisateur a été supprimé avec succès';
+                deleteUser($utilisateur_id, $utilisateur_mdp,
+                $utilisateur_login, $utilisateur_mail, 
+                $utilisateur_nom, $utilisateur_prenom, 
+                $utilisateur_adr_num_rue, $utilisateur_adr_cp, 
+                $utilisateur_tel, $ville_id, $role_id, $file_name);
+                $tLignes[] = "\n" . $utilisateur_id . ","
+                . $utilisateur_mdp . ",". $utilisateur_login . ","
+                . $utilisateur_mail . "," . $utilisateur_nom . ","
+                . $utilisateur_prenom . "," . $utilisateur_adr_num_rue . ","
+                . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
+                . $ville_id . "," . $role_id;
+                require('view/view_header.php'); 
+                require('view/view_usersList.php'); 
+                require('view/view_footer.php');
+            break;
+
+        // USER MODIFICATION -------------------------------------------------------------------- //
+        case 'édition' :
+            $title = 'MODIFICATION UTILISATEUR';
+            $info = '';
+                require('view/view_header.php'); 
+                require('view/view_userForm.php'); 
+                require('view/view_footer.php');
+            break;
+        
+        case 'éditionOK' :
+            $title = 'MODIFICATION DE CONTRAT RÉUSSIE';
+            $info = 'Le contact a été mis à jour avec succès';
+            if (!empty($utilisateur_idOLD)) {
+                updateUser ($utilisateur_idOLD, $utilisateur_mdpOLD,
+                $utilisateur_loginOLD, $utilisateur_mailOLD, 
+                $utilisateur_nomOLD, $utilisateur_prenomOLD, 
+                $utilisateur_adr_num_rueOLD, $utilisateur_adr_cpOLD, 
+                $utilisateur_telOLD, $ville_idOLD, $role_idOLD,
+                $utilisateur_id, $utilisateur_mdp,
+                $utilisateur_login, $utilisateur_mail, 
+                $utilisateur_nom, $utilisateur_prenom, 
+                $utilisateur_adr_num_rue, $utilisateur_adr_cp, 
+                $utilisateur_tel, $ville_id, $role_id, $file_name);
+                $tLignes[] = "\n" . $utilisateur_id . ","
+                . $utilisateur_mdp . ",". $utilisateur_login . ","
+                . $utilisateur_mail . "," . $utilisateur_nom . ","
+                . $utilisateur_prenom . "," . $utilisateur_adr_num_rue . ","
+                . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
+                . $ville_id . "," . $role_id;
+                require('view/view_header.php'); 
+                require('view/view_usersList.php'); 
+                require('view/view_footer.php');
+            } else {
+                die ('ACCÈS REFUSÉ');
+            }                     
             break;
 
     }
