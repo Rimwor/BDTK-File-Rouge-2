@@ -1,3 +1,4 @@
+<!-- THIS IS MIDDLE PAGE PART : WELCOME -->
 <section>
     <h1>:: Menu ::</h1>
         <p>

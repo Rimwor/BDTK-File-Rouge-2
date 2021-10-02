@@ -1,3 +1,4 @@
+<!-- THIS IS : USERS LIST - display of the users list -->
 <?php 
             $tListe = "";
             foreach ($tLignes as  $ligne_num => $ligne) {

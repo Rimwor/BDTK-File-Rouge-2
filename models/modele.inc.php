@@ -1,3 +1,4 @@
+<!-- THIS IS MODELE.INC.PHP with FUNCTIONS for USER CRUD -->
 <?php 
 
     // function getDataBaseConnetion() {
@@ -6,8 +7,8 @@
     /**
      * 
      * USER LIST : getting a full list of users
-     * 
      * Beata
+     * 
      * @param string $file_name : users list
      * @return void
      */
@@ -24,13 +25,10 @@
         }
     }
 
-    function readUser($utilisateur_id) {
-        
-    }
-
     /**
      * 
      * USER CREATION
+     * Beata
      *
      * @param string $utilisateur_id
      * @param string $utilisateur_mdp
@@ -60,6 +58,28 @@
             . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
             . $ville_id . "," . $role_id;
             file_put_contents($file_name, $user, FILE_APPEND);
+        } else {
+            die ("Le fichier " . $file_name . " n'existe pas !!");
+        }
+    }
+
+    /**
+     * USER SEARCH (User Read)
+     *
+     * @param string $utilisateur_id
+     * @param string $file_name
+     * @return void
+     */
+    function readUsers($utilisateur_id, $file_name) {
+        if (file_exists($file_name)) {
+            $tSearch = array();
+            $tab = getAllUsers($file_name);
+            foreach ($tab as $user) {
+                $tUser = explode(";", $user);
+                if (   (empty($utilisateur_id) || stristr($tUser[0], $utilisateur_id)))
+                    $tSearch[] = $user;
+            }
+            return $tSearch;
         } else {
             die ("Le fichier " . $file_name . " n'existe pas !!");
         }

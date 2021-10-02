@@ -1,3 +1,4 @@
+<!-- THIS IS : CONTROLER FOR USER CRUD -->
 <?php
 
     require_once('models/modele.inc.php');
@@ -53,7 +54,7 @@
                 require('view/view_footer.php');
             break;
         
-        // CONTACT LIST ---------------------------------------------------------------------------- //
+        // USERS LIST ---------------------------------------------------------------------------- //
         case 'listeUtilisateurs':
             $title = "Liste d'Utilisateurs :";
             $info = "";
@@ -85,6 +86,29 @@
                 . $utilisateur_prenom . "," . $utilisateur_adr_num_rue . ","
                 . $utilisateur_adr_cp . "," . $utilisateur_tel . ","
                 . $ville_id . "," . $role_id;  
+                require('view/view_header.php'); 
+                require('view/view_usersList.php'); 
+                require('view/view_footer.php');
+            break;
+
+        // USER SEARCH  ------------------------------------------------------------------------- //
+        case 'readUser' :
+            $title = 'USER SEARCH';
+            $info = '';
+                require('view/view_header.php'); 
+                require('view/view_userForm.php'); 
+                require('view/view_footer.php');
+            break;
+        case 'readUserOK' :
+            $title = 'SUCCESFUL USER SEARCH';
+                $tLignes = readUsers($utilisateur_id, $file_name);
+                if (count($tLignes) == 0)
+                    $info = "Il n'y a aucun utilisateur sur la liste qui correspond aux exigences ... ";
+                elseif (count($tLignes) > 1)
+                    $info = "Il y a plus d'un utilisateur sur la liste qui correspond aux exigences : ";
+                else
+                    $info = "Il n'y a qu'un seul utilisateur sur la liste qui correspond aux exigences :";
+                
                 require('view/view_header.php'); 
                 require('view/view_usersList.php'); 
                 require('view/view_footer.php');
