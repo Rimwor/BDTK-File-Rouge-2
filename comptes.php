@@ -1,14 +1,14 @@
-<!-- THIS IS INDEX CONTROLER -->
+<!-- THIS IS COMPTE CONTROLER -->
 
 <?php
 
     // PARAMETERS ================================================================================== //
     
-    $action = 'welcome';
+    $compte = 'admin';
 
     // ISSETS ...................................................................................... //
-    if(isset($_GET['action'])) {
-        $action = $_GET['action'];
+    if(isset($_GET['compte'])) {
+        $compte = $_GET['compte'];
     }
 
     // ECHOs ....................................................................................... //
@@ -17,14 +17,14 @@
     // echo 'POST : ' ; print_r($_POST) ; echo "<br />";
 
     // SWITCH ====================================================================================== //
-    switch ($action) {
+    switch ($compte) {
 
         // WELCOME : ------------------------------------------------------------------------------- //
-        case 'welcome':
-            $title = 'Bienvenue à la bédéthèque de Stockholm';
+        case 'admin':
+            $title = 'Gestion Utilisateurs | Bienvenue à la bédéthèque de Stockholm';
             $info = '';
                 require('view/index_1header.php'); 
-                require('view/index_2center.php'); 
+                require('view/compte_admin_2center.php'); 
                 require('view/index_3footer.php');
             break;
 
@@ -32,4 +32,4 @@
 
  ?>
 
-<!-- THIS IS INDEX CONTROLER -->
+<!-- THIS IS COMPTE CONTROLER -->
