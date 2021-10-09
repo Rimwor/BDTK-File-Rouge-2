@@ -5,11 +5,11 @@ class DbBDTK { // Beata
     // PROPRIETES //////////////////////////////////////////////////////// //
 	private static $connexion;
 
-	// PAS BESOIN de constructeur explicite .............................. //
+	// NO REQUIRED explicit constructor
 
     // FONCTIONS ///////////////////////////////////////////////////////// //
     /** .................................................................. //
-     * CONNEXION A LA BDD 
+     *  CONNECTION TO THE BDD
      *
      * @return void
      */
@@ -18,8 +18,7 @@ class DbBDTK { // Beata
         if (file_exists($file)) {
             $tParam = parse_ini_file($file,true);
             //var_dump($tParam);            
-
-            extract($tParam['connection bdd']); // génère les variables dynamiquement
+            extract($tParam['connection bdd']); // generate variables dynamically
 
             $dsn = "mysql:host=".$host."; port=".$port."; dbname=".$bdd."; charset=utf8";
             
@@ -34,7 +33,7 @@ class DbBDTK { // Beata
 	}
 
     /** .................................................................. //
-     * DECONNEXION DE LA BDD 
+     *  DISCONNECTING FROM THE BDD 
      *
      * @return void
      */
@@ -43,7 +42,7 @@ class DbBDTK { // Beata
     }
 
     /** .................................................................. //
-     * PATTERN SINGLETON 
+     *  PATTERN SINGLETON 
      * 
      * @return void
      */

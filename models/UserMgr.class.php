@@ -4,159 +4,129 @@
 
     class UserMgr { // Beata
         
-        // PROPRIETES //////////////////////////////////////////////////////// //
-	    private $connexionPDO;
+	    // PAS BESOIN de constructeur explicite ........................................................ //
 
-	    // PAS BESOIN de constructeur explicite .............................. //
+        // FONCTIONS /////////////////////////////////////////////////////////////////////////////////// //
 
-        // FONCTIONS ///////////////////////////////////////////////////////// //
-
-        /** ....................................................................................................................... //
-         * GET USERS LIST
-         *
-         * @param array $choix
+        /** ............................................................................................ //
+         * USERS LIST
          * @return array
          */
-        public static function getListUsers($choix = PDO::FETCH_ASSOC) : array {
+        
+        public static function getUsersList() : array {
 
-            $connexionPDO = DbBDTK::getConnexion();
-            var_dump($connexionPDO);
-            // echo "CONNEXION REUSSIE" . RC;
+            $connexionPDD = DbBDTK::getConnexion();
             
+            echo "CONNEXION REUSSIE" . RC;
+
             // Request: USERS LIST
             $sql = 'SELECT * FROM utilisateur ORDER BY utilisateur_id ASC';
             // echo $sql; 
-
-            // Start the request
-            $resPDOstt = $connexionPDO->query($sql);
-            //var_dump($resPDOstt);
+            
+            // Prepare the request
+            $resPDOstt = $connexionPDD->query($sql);
+            // var_dump($resPDOstt); // TEST 
 
             // Define FETCH MODE
-            switch($choix) {
-                case PDO::FETCH_ASSOC:
-                    $resPDOstt->setFetchMode(PDO::FETCH_ASSOC);
-                    break;
-                case PDO::FETCH_NUM:
-                    $resPDOstt->setFetchMode(PDO::FETCH_NUM);
-                    break;
-                case PDO::FETCH_CLASS:
-                    $resPDOstt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
-                    'User', array (
-                    'utilisateur_id', 'utilisateur_mdp', 'utilisateur_login',
-                    'utilisateur_mail', 'utilisateur_nom', 'utilisateur_prenom',
-                    'utilisateur_adr_num_rue', 'utilisateur_adr_cp',
-                    'utilisateur_tel', 'ville_id', 'role_id'));
-                    break;
-            }
+            $resPDOstt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
+            'User', array ('utilisateur_id', 'utilisateur_mdp',
+            'utilisateur_login', 'utilisateur_mail', 'utilisateur_nom',
+            'utilisateur_prenom', 'utilisateur_adr_num_rue', 
+            'utilisateur_adr_cp', 'utilisateur_tel', 'ville_id', 'role_id'));
 
-            // Read a result 
-            // $record = $resPDOstt->fetch();
-
-            // echo $record['utilisateur_nom'];
-            // echo $record[1];
-
-            // Read all the cursor's PDOStatements
             $records = $resPDOstt->fetchAll();
 
             // Displays the result
-            //var_dump($records);
-
+            // var_dump ($records); // TEST
             $resPDOstt->closeCursor();      // close the cursor 
             DbBDTK::disconnect();           // close the connection
 
             return $records;
+
         }
-        
-        /** ....................................................................................................................... //
+
+        // ///////////////////////////////////////////////////////////////////////////////////////////// //
+
+        /**
          * GET USER BY ID
          *
-         * @param $utilisateur_id
-         * @param $choix
+         * @param $id
          * @return void
          */
-        public static function getUserById($utilisateur_id, $choix = PDO::FETCH_ASSOC) {
+        public static function getUserById($id) {
 
-            $sql = "SELECT * FROM utilisateur WHERE utilisateur_id = ?";
+            // CONNECTING TO THE SERVER
+            $connexion = DbBDTK::getConnexion();
+            echo "CONNEXION REUSSIE" . RC;
 
-            $connexionPDO = DbBDTK::getConnexion();
+            // SEARCH BY ID where ID = ?
+            $sql = 'SELECT * 
+                    FROM utilisateur
+                    WHERE utilisateur_id = ?
+                    ORDER BY utilisateur_nom ASC';
+            
+            // Prepare the request
+            $results = $connexion->prepare($sql);
 
-            // Start the request
-            $resPDOstt = $connexionPDO->prepare($sql);
-            //var_dump($resPDOstt);
+            // Execute the request
+            $results->execute(array($id));
 
-            $resPDOstt->execute(array($utilisateur_id));
+            $results->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
+            'User', array('utilisateur_id', 'utilisateur_mdp',
+            'utilisateur_login', 'utilisateur_mail', 'utilisateur_nom',
+            'utilisateur_prenom', 'utilisateur_adr_num_rue', 
+            'utilisateur_adr_cp', 'utilisateur_tel', 'ville_id', 'role_id'));
 
-            // Define FETCH MODE
-            switch($choix) {
-                case PDO::FETCH_ASSOC:
-                    $resPDOstt->setFetchMode(PDO::FETCH_ASSOC);
-                    break;
-                case PDO::FETCH_NUM:
-                    $resPDOstt->setFetchMode(PDO::FETCH_NUM);
-                    break;
-                case PDO::FETCH_CLASS:
-                    $resPDOstt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
-                    'User', array (
-                    'utilisateur_id', 'utilisateur_mdp', 'utilisateur_login',
-                    'utilisateur_mail', 'utilisateur_nom', 'utilisateur_prenom',
-                    'utilisateur_adr_num_rue', 'utilisateur_adr_cp',
-                    'utilisateur_tel', 'ville_id', 'role_id'));
-                    break;
+            $datas = $results->fetchAll(); // get results
+            if (empty($datas)) {
+                echo "Utilisateur n'existe pas" . RC;
+            } else {
+                return $datas;
             }
-
-            // Read the result
-            $record = $resPDOstt->fetch();
-
-            $resPDOstt->closeCursor();      // close the cursor 
-            DbBDTK::disconnect();           // close the connection
-
-            return $record;
+            
         }
 
-        /** ....................................................................................................................... //
+        // ///////////////////////////////////////////////////////////////////////////////////////////// //
+
+        /**
          * GET USERS BY NAME
          *
-         * @param $utilisateur_nom
-         * @param $choix
+         * @param $nom
          * @return void
          */
-        public static function getUsersByName($utilisateur_nom, $choix = PDO::FETCH_ASSOC) {
+        public static function getUsersByName($nom) {
 
-            $sql = "SELECT * FROM utilisateur WHERE utilisateur_nom LIKE :nom";
+            // CONNECTING TO THE SERVER
+            $connexion = DbBDTK::getConnexion();
+            echo "CONNEXION REUSSIE" . RC;
 
-            $connexionPDO = DbBDTK::getConnexion();
+            // Search user by utilisateur_nom
+            $sql = 'SELECT * 
+                    FROM utilisateur
+                    WHERE utilisateur_nom LIKE :userNom
+                    ORDER BY utilisateur_nom ASC';
             
-            // Start the request
-            $resPDOstt = $connexionPDO->prepare($sql);
-            //var_dump($resPDOstt);
+            // Prepare the request
+            $results = $connexion->prepare($sql);
 
-            $resPDOstt->execute(array(':nom'=>'%'.$utilisateur_nom.'%'));
+            // Execute the request
+            $results->execute(array(':userNom'=>'%'.$nom.'%'));
 
-            // Define FETCH MODE
-            switch($choix) {
-                case PDO::FETCH_ASSOC:
-                    $resPDOstt->setFetchMode(PDO::FETCH_ASSOC);
-                    break;
-                case PDO::FETCH_NUM:
-                    $resPDOstt->setFetchMode(PDO::FETCH_NUM);
-                    break;
-                case PDO::FETCH_CLASS:
-                    $resPDOstt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
-                    'User', array (
-                    'utilisateur_id', 'utilisateur_mdp', 'utilisateur_login',
-                    'utilisateur_mail', 'utilisateur_nom', 'utilisateur_prenom',
-                    'utilisateur_adr_num_rue', 'utilisateur_adr_cp',
-                    'utilisateur_tel', 'ville_id', 'role_id'));
-                    break;
-            }
+            $results->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
+            'User', array('utilisateur_id', 'utilisateur_mdp',
+            'utilisateur_login', 'utilisateur_mail', 'utilisateur_nom',
+            'utilisateur_prenom', 'utilisateur_adr_num_rue', 
+            'utilisateur_adr_cp', 'utilisateur_tel', 'ville_id', 'role_id'));
 
-            // Read the result
-            $records = $resPDOstt->fetchAll();
+            $datas = $results->fetchAll(); // get results
 
-            $resPDOstt->closeCursor();      // close the cursor 
-            DbBDTK::disconnect();           // close the connection
-
-            return $records;
+                if (empty($datas)) {
+                    echo "Utilisateur n'existe pas" . RC;
+                } else {
+                    return $datas;
+                }
         }
+        
+
     }
 ?>

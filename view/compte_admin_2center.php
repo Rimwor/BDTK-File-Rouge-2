@@ -19,9 +19,10 @@
                 
             <?php echo $info ?>
                 <p>
-                    <li><a href="usersList.php"><button>Liste d'Utilisateurs</button></a></li>
-                    <li><a href="comptes?action=readUser"><button>Utilisateurs Recherche</button></a></li>
-                    <li><a href="comptes?action=createUser"><button>Creation Utilisateurs</button></a></li>
+                    <li><a href="test.php"><button>Liste d'Utilisateurs</button></a></li>
+                    <li><a href="test_search.php"><button>Utilisateurs Recherche</button></a></li>
+                    <li><a href="test_add.php"><button>Utilisateur Creation</button></a></li>
+                    <li><a href="test_delete.php"><button>Utilisateur Suppression</button></a></li>
                 </p>
                
             </div>
