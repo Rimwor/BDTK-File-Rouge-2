@@ -47,15 +47,19 @@
                 <!-- SUBMIT ............................................................................................................ --> 
                 <div class="text-right">
                     <button id="btn_confirm" type="submit" class="btn btn-light mb-2">Confirmer</button>
+                <br />
+                    <a href="index.php?action=admin">
+                        <button>ADMIN</button>
+                    </a>
                 </div>
             </div>
 
         </div>
 
-        <!-- FOOTER -->
+        <!-- FOOTER .................................................................................................................... -->
         <footer class="footer">
             <a href="mot_de_passe_oublie.html" target="_blank">
-                <!-- PASSWORD FORGOT BUTTON ............................................................................................ -->
+                <!-- PASSWORD FORGOT BUTTON -->
                 <button class="button"><i class="fas fa-unlock-alt"></i>&nbspMot de passe oublié</button>
             </a>
         </footer>

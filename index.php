@@ -20,14 +20,22 @@
     switch ($action) {
 
         // WELCOME : ------------------------------------------------------------------------------- //
-        case 'welcome':
+        case 'welcome': // PAGE DE CONNEXION
             $title = 'Bienvenue à la bédéthèque de Stockholm';
             $info = '';
                 require('view/index_1header.php'); 
                 require('view/index_2center.php'); 
                 require('view/index_3footer.php');
             break;
-
+            
+        case 'admin': // PAGE ADMINISTRATEUR
+            $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
+            $info = '<h3>' . 'ADMIN | Gestion Utilisateurs' . '</h3>';
+                require('view/index_1header.php'); 
+                require('view/compte_admin_2center.php'); 
+                require('view/index_3footer.php');
+            break;
+    
     }
 
  ?>

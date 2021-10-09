@@ -2,7 +2,7 @@
 
 <body>
 
-    <body background="assets/img/bdthequebackground.jpg" alt="background">
+    <body background="assets/img/bdthequebackground1.jpg" alt="background">
 
         <!-- HEADER .................................................................................................................... -->
         <header>
@@ -17,18 +17,21 @@
             <!-- CONNECTION FORM ....................................................................................................... --> 
             <div class="container-md align-self-auto bg-secondary p-5-md mt-10-md mt-15-sm mt-15-fs bg-opacity-75 border">
                 
-                
+            <?php echo $info ?>
+                <p>
+                    <li><a href="usersList.php"><button>Liste d'Utilisateurs</button></a></li>
+                    <li><a href="comptes?action=readUser"><button>Utilisateurs Recherche</button></a></li>
+                    <li><a href="comptes?action=createUser"><button>Creation Utilisateurs</button></a></li>
+                </p>
                
             </div>
 
         </div>
 
-        <!-- FOOTER -->
+        <!-- FOOTER .................................................................................................................... -->
         <footer class="footer">
-            <a href="mot_de_passe_oublie.html" target="_blank">
-                <!-- PASSWORD FORGOT BUTTON ............................................................................................ -->
-                <button class="button"><i class="fas fa-unlock-alt"></i>&nbspMot de passe oublié</button>
-            </a>
+                <!-- BACK BUTTON -->
+                
         </footer>
 
         <div id="qunit" hidden></div>
