@@ -16,7 +16,7 @@
 
             $newUser = new User('USER12','afpa','ah_08',
             'new@gmail.com','Dorota','Wroblewska',
-            'Ul Topolowa 6','56-120','0649473829',
+            'Ul Topolowa 6','56120','0649473829',
             'VIL06','adher');
 
             echo RC . "'INSERT' NEW USER" . RC;
