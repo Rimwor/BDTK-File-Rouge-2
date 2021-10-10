@@ -86,14 +86,14 @@
         }
 
         public function getNOM() {                               // GET NOM
-            return $this->utilisateur_login;                     // SET NOM
+            return $this->utilisateur_nom;                     // SET NOM
         }
         private function setNOM($utilisateur_nom) {
             $this->pil = $utilisateur_nom;
         }
 
         public function getPRENOM() {                            // GET PRENOM
-            return $this->utilisateur_login;                     // SET PRENOM
+            return $this->utilisateur_prenom;                     // SET PRENOM
         }
         private function setPRENOM($utilisateur_prenom) {
             $this->pil = $utilisateur_prenom;
@@ -141,7 +141,8 @@
          * @return string
          */
         public function __toString() {
-            return $this->utilisateur_nom . $this->utilisateur_prenom . " (ID : " . $this->utilisateur_id 
+            return $this->utilisateur_nom . $this->utilisateur_prenom . " (ID : " . $this->utilisateur_id
+                                                                    . "MOT DE PASSE :" . $this->utilisateur_mdp
                                                                     . ", LOGIN : " . $this->utilisateur_login
                                                                     . ", MAIL : " . $this->utilisateur_mail
                                                                     . ", ADRESSE :" . $this->utilisateur_adr_num_rue

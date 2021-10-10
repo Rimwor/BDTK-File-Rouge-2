@@ -1,16 +1,18 @@
 <?php
-
     require_once('models/DbBDTK.class.php');
     require_once('models/User.class.php');
 
-    class UserMgr {
+    class UserMgr { // Beata
         
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
+	    // PAS BESOIN de constructeur explicite ........................................................ //
 
-        /**
+        // FONCTIONS /////////////////////////////////////////////////////////////////////////////////// //
+
+        /** ............................................................................................ //
          * USERS LIST
          * @return array
          */
+        
         public static function getUsersList() : array {
 
             $connexionPDD = DbBDTK::getConnexion();
@@ -19,15 +21,15 @@
 
             // Request: USERS LIST
             $sql = 'SELECT * FROM utilisateur ORDER BY utilisateur_id ASC';
-            // echo $sql;
+            // echo $sql; 
             
             // Prepare the request
             $resPDOstt = $connexionPDD->query($sql);
             // var_dump($resPDOstt); // TEST 
 
-            // Odczytujemy wszystkie rezultaty/obiekty z tabeli 'Pilote'
+            // Define FETCH MODE
             $resPDOstt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,
-            'User', array('utilisateur_id', 'utilisateur_mdp',
+            'User', array ('utilisateur_id', 'utilisateur_mdp',
             'utilisateur_login', 'utilisateur_mail', 'utilisateur_nom',
             'utilisateur_prenom', 'utilisateur_adr_num_rue', 
             'utilisateur_adr_cp', 'utilisateur_tel', 'ville_id', 'role_id'));
@@ -36,11 +38,14 @@
 
             // Displays the result
             // var_dump ($records); // TEST
+            $resPDOstt->closeCursor();      // close the cursor 
+            DbBDTK::disconnect();           // close the connection
+
             return $records;
 
         }
 
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
+        // ///////////////////////////////////////////////////////////////////////////////////////////// //
 
         /**
          * GET USER BY ID
@@ -81,7 +86,7 @@
             
         }
 
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
+        // ///////////////////////////////////////////////////////////////////////////////////////////// //
 
         /**
          * GET USERS BY NAME
@@ -121,37 +126,8 @@
                     return $datas;
                 }
         }
-
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
-
-        /**
-         * ADD NEW PILOT
-         *
-         * @param $pilote
-         * @return void
-         */
-        public static function addUser($user) {
-            // ŁĄCZENIE SIĘ Z SERWEREM
-            $connexion = DbBDTK::getConnexion();
-            echo "CONNEXION REUSSIE" . RC;
-
-            $sql = "INSERT INTO utilisateur (utilisateur_id, utilisateur_mdp,
-            utilisateur_login, utilisateur_mail, utilisateur_nom,
-            utilisateur_prenom, utilisateur_adr_num_rue, 
-            utilisateur_adr_cp, utilisateur_tel, ville_id, role_id) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            $result = $connexion->prepare($sql);
-
-            $result->execute(array($user->getID(), $user->getMDP(), $user->getLOGIN(),
-                                   $user->getMAIL(), $user->getNOM(), $user->getPRENOM(),
-                                   $user->getADR(), $user->getCP(), $user->getTEL(),
-                                   $user->getVILLE(), $user->getROLE()));        
-
-        }
-
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
+        
 
     }
-
+    
 ?>
