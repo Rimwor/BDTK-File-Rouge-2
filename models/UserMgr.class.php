@@ -131,7 +131,7 @@
          * @return void
          */
         public static function addUser($user) {
-            // ŁĄCZENIE SIĘ Z SERWEREM
+           // CONNECTING TO THE SERVER
             $connexion = DbBDTK::getConnexion();
             echo "CONNEXION REUSSIE" . RC;
 
