@@ -15,7 +15,7 @@
         <div class="container-fluid">
 
             <!-- CONNECTION FORM ....................................................................................................... --> 
-            <div class="container-md align-self-auto bg-secondary p-5-md mt-10-md mt-15-sm mt-15-fs bg-opacity-75 border">
+            <div class="container-md align-self-auto bg-secondary mb-5 mb-10-sm p-5-md mt-15-md mt-15-sm mt-15-fs bg-opacity-75 border">
                 
                 <div class="mb-8 mt-3 fs-4 text-center">
                     <h1 class="bienvenue">Bienvenue</h1>
@@ -24,23 +24,21 @@
 
                 <form id="connexion" class="form_connection" action="" method="POST">
 
-                    <!-- USER ID ........................................................................................................-->
+                    <!-- USER ID ....................................................................................................... -->
                     <div class="mb-3 mt-3 fs-4">
-                        <label for="username">Entrez votre identifiant personnel&nbsp:</label>
-                        </br>
-                        <input id="username" class="metro-input" placeholder="  Votre identifiant personnel" type="text" name="username" maxlength="10" style="-webkit-text-security: disc;" required/>
+                        <input id="username" name="username" class="form-control" type="text" placeholder="Votre identifiant personnel" aria-describedby="Doit comporter au maximum 20 caractères" aria-label="USER+NUMERO" maxlength="20">
                     </div>
-
-                    <!-- PIN -->
                     <div class="mb-3 fs-4">
-                        <label for="password" class="form-label">Saisie votre code PIN&nbsp:</label>
-                        <!-- KEY PAD ....................................................................................................-->
-                        <div class="row">
-                            <div class="cell-md-6 fs-4">
-                                <input id="password" name="password" class="metro-input" placeholder="Votre code pin" type="text" data-role="keypad" data-shuffle="true" data-dynamic-position="false" data-on-change="$('#change_target').val(arguments[0])" data-key-length="6" required="required"/>
+
+                    </div>
+                    <!-- PASSWORD -->
+                    <div class="mb-3 fs-4">
+                        <div class="row-auto align-items-center">
+                            <div class="col-auto">
+                                <input type="password" id="inputPassword6" class="form-control" placeholder="Votre mot de passe " aria-describedby="Doit comporter au maximum 15 caractères" aria-label="afpa" maxlength="15">
                             </div>
                         </div>
-                        </br>
+
                     </div>
                 </form>
 
@@ -70,13 +68,13 @@
     <!-- ========================================================= JS ================================================================== -->
 
             <!-- JAVA SCRIPT -->
-            <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
+            <!-- <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
             <script src="assets/js/jquery.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
-            <script src="assets/js/comptes_utilisateurs.js"></script>
+            <!-- <script src="assets/js/comptes_utilisateurs.js"></script>
             <script src="assets/js/controles_profils.js"></script>
-            <script src="assets/js/connexion.js"></script>
+            <script src="assets/js/connexion.js"></script> -->
 
             <script src="assets/js/metro.js"></script>
             <script src="assets/js/all.js"></script>
