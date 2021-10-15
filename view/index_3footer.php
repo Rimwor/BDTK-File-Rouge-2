@@ -4,13 +4,13 @@
     <div class="fixed-bottom">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
         <div class="col">
-        One of three columns
+        Back
         </div>
         <div class="col">
-        One of three columns
+        footer
         </div>
         <div class="col">
-        One of three columns
+        footer
         </div>
     </div>
     </div>

@@ -32,13 +32,13 @@
     <div class="sticky-top">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
         <div class="col">
-        One of three columns
+        <?php echo $header_info ?>
         </div>
         <div class="col">
-        One of three columns
+        menu
         </div>
         <div class="col">
-        One of three columns
+        menu
         </div>
     </div>
     </div>

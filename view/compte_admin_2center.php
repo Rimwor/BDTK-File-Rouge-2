@@ -23,6 +23,7 @@
                     <li><a href="test_search.php"><button>Utilisateurs Recherche</button></a></li>
                     <li><a href="test_add.php"><button>Utilisateur Creation</button></a></li>
                     <li><a href="test_delete.php"><button>Utilisateur Suppression</button></a></li>
+                    <li><a href="test_modif.php"><button>Utilisateur Modification</button></a></li>
                 </p>
                
             </div>
