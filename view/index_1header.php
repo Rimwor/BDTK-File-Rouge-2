@@ -27,4 +27,21 @@
 
 </head>
 
+<?php if ($action != 'welcome') { ?> 
+<header>
+    <div class="sticky-top">
+    <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
+        <div class="col">
+        One of three columns
+        </div>
+        <div class="col">
+        One of three columns
+        </div>
+        <div class="col">
+        One of three columns
+        </div>
+    </div>
+    </div>
+</header>
+<?php } ?>
 <!-- THIS IS HEADER -->
