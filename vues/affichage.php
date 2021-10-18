@@ -1,3 +1,5 @@
+<!-- THIS IS DISPLAY -->
+
 <body>
 
     <body background="assets/img/bdthequebackground1.jpg" alt="background">
@@ -17,6 +19,7 @@
 
                 <!-- GET USERS LIST -->
                 <div class="scroll_window overflow-auto">
+
                 <?php
                     echo "<p>";
                     echo $info;
@@ -28,7 +31,56 @@
                             echo $tUsers;
                         }
                     }
+
+
+                    if ($action === 'search_result') {
+                        if (count($liste) === 1) {
+                            foreach($liste as $tResults) {
+                            // var_dump($tResults);
+
+                                        echo $tResults;
+                                        
+                                        echo "<form method='POST' action='index.php?action=modifbd'>
+                                        <input type='submit' value='Modifier'>
+                                            <input type='hidden' name='id' value='" .$tResults->getID(). "'>
+                                            <input type='hidden' name='mdpOld' value='" .$tResults->getMDP(). "'>
+                                            <input type='hidden' name='loginOld' value='" .$tResults->getLOGIN(). "'>
+                                            <input type='hidden' name='mailOld' value='" .$tResults->getMAIL(). "'>
+                                            <input type='hidden' name='nomOld' value='" .$tResults->getNOM(). "'>
+                                            <input type='hidden' name='prenomOld' value='" .$tResults->getPRENOM(). "'>
+                                            <input type='hidden' name='adrOld' value='" .$tResults->getADR(). "'>
+                                            <input type='hidden' name='cpOld' value='" .$tResults->getCP(). "'>
+                                            <input type='hidden' name='telOld' value='" .$tResults->getTEL(). "'>
+                                            <input type='hidden' name='villeOld' value='" .$tResults->getVILLE(). "'>
+                                            <input type='hidden' name='roleOld' value='" .$tResults->getROLE(). "'>
+                                        </form>";
+                                        
+                                        echo "<br />";
+
+                                        echo "<form method='POST' action='index.php?action=supprimer'>
+                                            <input type='submit' value='Supprimer'>
+                                            <input type='hidden' name='id' value='" .$tResults->getID(). "'>
+                                            <input type='hidden' name='mdp' value='" .$tResults->getMDP(). "'>
+                                            <input type='hidden' name='login' value='" .$tResults->getLOGIN(). "'>
+                                            <input type='hidden' name='mail' value='" .$tResults->getMAIL(). "'>
+                                            <input type='hidden' name='nom' value='" .$tResults->getNOM(). "'>
+                                            <input type='hidden' name='prenom' value='" .$tResults->getPRENOM(). "'>
+                                            <input type='hidden' name='adr' value='" .$tResults->getADR(). "'>
+                                            <input type='hidden' name='cp' value='" .$tResults->getCP(). "'>
+                                            <input type='hidden' name='tel' value='" .$tResults->getTEL(). "'>
+                                            <input type='hidden' name='ville' value='" .$tResults->getVILLE(). "'>
+                                            <input type='hidden' name='role' value='" .$tResults->getROLE(). "'>
+                                        </form>";
+                                        }
+                        } else {
+                            foreach($liste as $tResults) {
+                            //var_dump($tResults);
+                                echo $tResults;
+                            }
+                        }
+                    }
                 ?>
+
                 </div>
 
 
@@ -36,21 +88,4 @@
 
 </div>
 
-<!-- FOOTER .................................................................................................................... -->
-<footer class="footer">
-        <!-- BACK BUTTON -->
-        
-</footer>
-
-<div id="qunit" hidden></div>
-<div id="qunit-fixture" hidden></div>
-
-<!-- ========================================================= JS ================================================================== -->
-
-    <!-- JAVA SCRIPT -->
-
-    <script src="assets/js/metro.js"></script>
-    <script src="assets/js/all.js"></script>
-</body>
-
-<!-- THIS IS COMPTE (ADMIN) CENTER -->
+<!-- THIS IS DISPLAY -->

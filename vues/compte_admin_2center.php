@@ -25,9 +25,7 @@
                     <p>
                         <li><a href="index.php?action=affichageUsers"><button>Liste d'Utilisateurs</button></a></li>
                         <li><a href="index.php?action=recherche"><button>Utilisateurs : Recherche</button></a></li>
-                        <li><a href="test_add.php"><button>Utilisateur : Creation</button></a></li>
-                        <li><a href="test_delete.php"><button>Utilisateur : Suppression</button></a></li>
-                        <li><a href="test_modif.php"><button>Utilisateur : Modification</button></a></li>
+                        <li><a href="index.php?action=ajout"><button>Utilisateur : Creation</button></a></li>
                     </p>
                     </div>
                     
