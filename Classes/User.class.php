@@ -141,15 +141,16 @@
          * @return string
          */
         public function __toString() {
-            return $this->utilisateur_nom . $this->utilisateur_prenom . " (ID : " . $this->utilisateur_id
-                                                                    . "MOT DE PASSE :" . $this->utilisateur_mdp
-                                                                    . ", LOGIN : " . $this->utilisateur_login
-                                                                    . ", MAIL : " . $this->utilisateur_mail
-                                                                    . ", ADRESSE :" . $this->utilisateur_adr_num_rue
-                                                                    . ", CODE POSTALE : " . $this->utilisateur_adr_cp
-                                                                    . ", VILLE ID : " . $this->ville_id
-                                                                    . ", TEL : " . $this->utilisateur_tel
-                                                                    . ", ROLE :" . $this->role_id . ")";
+            $message = "Auteur : " . $this->getNOM() . " " . $this->getPRENOM() . " (ID : " . $this->getID()
+                                                                    . "MOT DE PASSE :" . $this->getMDP()
+                                                                    . ", LOGIN : " . $this->getLOGIN()
+                                                                    . ", MAIL : " . $this->getMAIL()
+                                                                    . ", ADRESSE :" . $this->getADR()
+                                                                    . ", CODE POSTALE : " . $this->getCP()
+                                                                    . ", VILLE ID : " . $this->getVILLE()
+                                                                    . ", TEL : " . $this->getTEL()
+                                                                    . ", ROLE :" . $this->getROLE() . ")";
+            return $message;
         }
     }
 

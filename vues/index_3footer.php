@@ -1,5 +1,5 @@
 <!-- THIS IS FOOTER -->
-<?php if ($action != 'welcome') { ?> 
+<?php if ($action != 'accueil') { ?> 
 <footer>
     <div class="fixed-bottom">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">

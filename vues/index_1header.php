@@ -27,7 +27,7 @@
 
 </head>
 
-<?php if ($action != 'welcome') { ?> 
+<?php if ($action != 'accueil') { ?> 
 <header>
     <div class="sticky-top">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
