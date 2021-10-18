@@ -19,18 +19,24 @@
 
                 <img src="assets\img\profile.png" class="responsive rounded float-right" alt="profile">
                 <div class="mt-5 mb-5">
-                
-                    <?php echo $info ?>
-                    <div class="mt-5">
-                    <p>
-                        <li><a href="index.php?action=affichageUsers"><button>Liste d'Utilisateurs</button></a></li>
-                        <li><a href="index.php?action=recherche"><button>Utilisateurs : Recherche</button></a></li>
-                        <li><a href="test_add.php"><button>Utilisateur : Creation</button></a></li>
-                        <li><a href="test_delete.php"><button>Utilisateur : Suppression</button></a></li>
-                        <li><a href="test_modif.php"><button>Utilisateur : Modification</button></a></li>
-                    </p>
-                    </div>
-                    
+
+                    <!-- RECHCERCHE FORM -->
+                    <?php
+                        if ($action == 'recherche') {
+                            
+                            echo "<p>";
+                            echo $info;
+                            echo "</p>";
+                            echo "<br />";
+
+                            echo '  <form action="index.php?action=search_result" method="POST">
+                                        <p><input type="text" name="needle"></p>
+                                        <input type="submit" value="Rechercher un user ...">
+                                    </form>';
+                        }
+
+                    ?>
+
                 </div>  
             </div>
 

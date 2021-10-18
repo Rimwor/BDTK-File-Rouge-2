@@ -1,9 +1,7 @@
-<!-- THIS IS CONNECTION CLASS -->
-
 <?php
 
-    class Connect_bdtk { // Beata
-        
+    class Connect_bdtk {
+
         // PROPRIETES //////////////////////////////////////////////////////// //
         private static $connexion;
 
@@ -26,7 +24,7 @@
                 $mysqlPDO = new PDO($dsn, $user, $password,
                                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             Connect_bdtk::$connexion = $mysqlPDO;
-// echo "Connecté !";
+        // echo "Connecté !";
             return Connect_bdtk::$connexion;
             }
             else echo "Fichier Params Introuvable";
@@ -34,8 +32,6 @@
 
         /** .................................................................. //
          *  DISCONNECTING FROM THE BDD 
-         *
-         * @return void
          */
         public static function disconnect(){
             Connect_bdtk::$connexion = null;
@@ -43,8 +39,6 @@
 
         /** .................................................................. //
          *  PATTERN SINGLETON 
-         * 
-         * @return void
          */
         public static function getConnexion() {
             if (Connect_bdtk::$connexion != null) {
@@ -56,5 +50,3 @@
     }
 
 ?>
-
-<!-- THIS IS CONNECTION CLASS -->

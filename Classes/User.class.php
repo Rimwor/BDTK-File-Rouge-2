@@ -141,15 +141,16 @@
          * @return string
          */
         public function __toString() {
-            $message = "Auteur : " . $this->getNOM() . " " . $this->getPRENOM() . " (ID : " . $this->getID()
-                                                                    . "MOT DE PASSE :" . $this->getMDP()
-                                                                    . ", LOGIN : " . $this->getLOGIN()
-                                                                    . ", MAIL : " . $this->getMAIL()
-                                                                    . ", ADRESSE :" . $this->getADR()
-                                                                    . ", CODE POSTALE : " . $this->getCP()
-                                                                    . ", VILLE ID : " . $this->getVILLE()
-                                                                    . ", TEL : " . $this->getTEL()
-                                                                    . ", ROLE :" . $this->getROLE() . ")";
+            $message = "<b>" . "Auteur : " . "</b>" . $this->getNOM() . " " . $this->getPRENOM() . "<br />"
+                                                                    . "<b>" . "ID : " . "</b>" . $this->getID() . "<br />"
+                                                                    . "<b>" . "MOT DE PASSE : " . "</b>" . $this->getMDP() . "<br />"
+                                                                    . "<b>" . "LOGIN : " . "</b>" . $this->getLOGIN() . "<br />"
+                                                                    . "<b>" . "MAIL : " . "</b>" . $this->getMAIL() . "<br />"
+                                                                    . "<b>" . "ADRESSE : " . "</b>" . $this->getADR() . "<br />"
+                                                                    . "<b>" . "CODE POSTALE : " . "</b>" . $this->getCP() . "<br />"
+                                                                    . "<b>" . "VILLE ID : " . "</b>" . $this->getVILLE() . "<br />"
+                                                                    . "<b>" . "TEL : " . "</b>" . $this->getTEL() . "<br />"
+                                                                    . "<b>" . "ROLE : " . "</b>" . $this->getROLE() . "<br />" . "<br />";
             return $message;
         }
     }

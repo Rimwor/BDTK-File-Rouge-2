@@ -10,7 +10,7 @@
             <!-- empty -->
         </div>
         <div class="col mr-1 d-flex align-items-end flex-column">
-            <a href="index.php"><button id="btnback" name="back" class="btn btn-light btn-sm mb-1 mt-1">Retour</button></a>
+            <a href="index.php?action=admin"><button id="btnback" name="back" class="btn btn-light btn-sm mb-1 mt-1">Retour</button></a>
         </div>
     </div>
     </div>
