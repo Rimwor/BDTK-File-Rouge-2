@@ -6,7 +6,7 @@
 
         <!-- HEADER .................................................................................................................... -->
         <header>
-            <a href="help.html" target="_blank">
+            <a href="index.php" target="_blank">
                 <img src="assets\img\help.png" class="img_help ml-1 mt-1" alt="help" />
             </a>
         </header>
@@ -56,7 +56,7 @@
 
         <!-- FOOTER .................................................................................................................... -->
         <footer class="footer">
-            <a href="mot_de_passe_oublie.html" target="_blank">
+            <a href="index.php" target="_blank">
                 <!-- PASSWORD FORGOT BUTTON -->
                 <button class="button"><i class="fas fa-unlock-alt"></i>&nbspMot de passe oublié</button>
             </a>
