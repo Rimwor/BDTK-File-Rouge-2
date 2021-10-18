@@ -31,8 +31,8 @@
             
         case 'admin': // PAGE ADMINISTRATEUR
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3>' . 'ADMIN | Gestion Utilisateurs' . '</h3>';
-            $header_info = 'Nom d\'Utilisateur';
+            $info = '<h3 class=" text-nowrap">' . 'Gestion Utilisateurs' . '</h3>';
+            $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
                 require('view/index_1header.php'); 
                 require('view/compte_admin_2center.php'); 
                 require('view/index_3footer.php');

@@ -68,13 +68,6 @@
     <!-- ========================================================= JS ================================================================== -->
 
             <!-- JAVA SCRIPT -->
-            <!-- <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
-            <script src="assets/js/jquery.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-
-            <!-- <script src="assets/js/comptes_utilisateurs.js"></script>
-            <script src="assets/js/controles_profils.js"></script>
-            <script src="assets/js/connexion.js"></script> -->
 
             <script src="assets/js/metro.js"></script>
             <script src="assets/js/all.js"></script>

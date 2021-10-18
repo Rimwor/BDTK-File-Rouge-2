@@ -31,14 +31,14 @@
 <header>
     <div class="sticky-top">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
-        <div class="col">
+        <div class="col mt-3 align-middle align-self-center text-nowrap">
         <?php echo $header_info ?>
         </div>
         <div class="col">
-        menu
+        <!-- empty -->
         </div>
-        <div class="col">
-        menu
+        <div class="col-md-3 col-lg-2 mr-1 d-flex align-items-end flex-column">
+            <a href="index.php"><button id="btnback" name="back" class="btn btn-light btn-sm mt-1 btn-block">Déconnexion</button></a>
         </div>
     </div>
     </div>
