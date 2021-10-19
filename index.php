@@ -122,6 +122,15 @@ require('modeles/Connect.class.php');
                 require('vues/index_3footer.php');
         break;
 
+        case 'supprimer':
+            $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
+            $info = '<h3 class=" text-nowrap">' . 'Suppression d\'utilisateur réussi' . '</h3>';
+            $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
+            delUser($utilisateur_id);
+                require('vues/index_1header.php');
+                require('vues/affichage.php');
+                require('vues/index_3footer.php');
+            break;
     }
 
  ?>

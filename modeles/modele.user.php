@@ -71,6 +71,15 @@
                                       ':ville'=>$ville_id,
                                       ':role'=>$role_id));
             }
+
+        // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
+
+            function delUser($utilisateur_id) {
+                $sql = "DELETE FROM utilisateur WHERE utilisateur_id = :id";
+                $connexion = Connect_bdtk::getConnexion();
+                $delUser = $connexion->prepare($sql);
+                $delUser->execute(array(':id'=>$utilisateur_id));
+            }
 ?>
 
 <!-- THIS IS MODELE with FUNCTIONS -->
