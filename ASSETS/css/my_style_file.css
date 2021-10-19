@@ -1,7 +1,7 @@
 /* ========================================================== BODY =================================================================== */
 
-/* ========================================================== FONT =================================================================== */
-/* FONT */
+/* ========================================================== FONTs ================================================================== */
+/* FONTs */
 @import url('https://fonts.googleapis.com/css?family=Dela+Gothic+One:400');
 @import url('https://fonts.googleapis.com/css?family=Pirata+One:400');
 
@@ -102,11 +102,13 @@ h2, h3, h4, h5 {
     height: auto;
 }
 
+/* IMG LINE (index) */
 .line {
   opacity: 40%;
   max-width: 30%;
 }
 
+/* RESPONSIVE imgs */
 .responsive {
   width: 100%;
   max-width: 150px;
@@ -120,9 +122,23 @@ h2, h3, h4, h5 {
   }
 }
 
+/* INPUT - FRAME OFF/ON - black underline */
 input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search-md]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.md-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #000000a2;
   box-shadow: 0 1px 0 0 #000000a4;
+}
+
+/* AFFICHAGE : SCROLL WINDOW */
+.scroll_window {
+  height: 100%;
+  max-height: 400px;
+  width: auto;
+}
+
+.scroll_window_1 {
+  height: 100%;
+  max-height: 320px;
+  width: auto;
 }
 
 /* ========================================================== FOOTER ================================================================= */
