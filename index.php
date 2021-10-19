@@ -78,7 +78,7 @@ require('modeles/Connect.class.php');
 
         case 'admin': // PAGE ADMINISTRATEUR
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Gestion Utilisateurs' . '</h3>';
+            $info = '<h3 class=" text-nowrap">' . 'Gestion Utilisateurs' . '</h3>' . '<br/>';
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
 
