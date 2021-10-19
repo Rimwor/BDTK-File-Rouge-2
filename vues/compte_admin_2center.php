@@ -23,9 +23,9 @@
                     <?php echo $info ?>
                     <div class="mt-5">
                     <p>
-                        <li><a href="index.php?action=affichageUsers"><button>Liste d'Utilisateurs</button></a></li>
-                        <li><a href="index.php?action=recherche"><button>Utilisateurs : Recherche</button></a></li>
-                        <li><a href="index.php?action=ajout"><button>Utilisateur : Creation</button></a></li>
+                        <li><a href="index.php?action=affichageUsers"><button class="mb-2">Liste d'Utilisateurs</button></a></li>
+                        <li><a href="index.php?action=recherche"><button class="mb-2">Utilisateurs : Recherche</button></a></li>
+                        <li><a href="index.php?action=ajout"><button class="mb-2">Utilisateur : Creation</button></a></li>
                     </p>
                     </div>
                     
