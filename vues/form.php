@@ -101,7 +101,15 @@
                                                 <p><label>Code Postal : &nbsp</label><input type="text" name="cp"></p>
                                                 <p><label>Tel : &nbsp</label><input type="text" name="tel"></p>
                                                 <p><label>Ville Id : &nbsp</label><input type="text" name="ville"></p>
-                                                <p><label>Role Id : &nbsp</label><input type="text" name="role"></p>
+                                                <p><div class="input-group mb-2"><label>Role Id : &nbsp
+                                                                                 </label><div class="col-3"><select class="form-control">
+                                                                                                            <option selected>Sélectionner...</option>
+                                                                                                            <option>adher</option>
+                                                                                                            <option>admin</option>
+                                                                                                            <option>bibli</option>
+                                                                                                            <option>gesti</option>
+                                                                                                            <option>respo</option>
+                                                                                                            </select></div></div></p>
 
                                                 <input type="submit" value="Ajouter">
 

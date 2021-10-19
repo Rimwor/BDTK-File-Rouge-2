@@ -91,7 +91,7 @@ require('modeles/Connect.class.php');
 
         case 'ajout':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Creation utilistaeur' . '</h3>';
+            $info = '<h3 class=" text-nowrap">' . 'Creation utilisateur' . '</h3>';
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             // print_r($_REQUEST);
@@ -118,7 +118,7 @@ require('modeles/Connect.class.php');
 
         case 'affichageUsers' :
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'List d\'utilisateurs' . '</h3>';
+            $info = '<h3 class=" text-nowrap">' . 'Liste d\'utilisateurs' . '</h3>';
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             $listUsers = getListUsers();
