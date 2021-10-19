@@ -141,7 +141,7 @@
          * @return string
          */
         public function __toString() {
-            $message = "<b>" . "Auteur : " . "</b>" . $this->getNOM() . " " . $this->getPRENOM() . "<br />"
+            $message = "<b>" . "USER : " . "</b>" . $this->getNOM() . " " . $this->getPRENOM() . "<br />"
                                                                     . "<b>" . "ID : " . "</b>" . $this->getID() . "<br />"
                                                                     . "<b>" . "MOT DE PASSE : " . "</b>" . $this->getMDP() . "<br />"
                                                                     . "<b>" . "LOGIN : " . "</b>" . $this->getLOGIN() . "<br />"

@@ -16,9 +16,13 @@ require('modeles/Connect.class.php');
     $action = 'accueil';
     $needle = '';
 
-    $utilisateur_id = $utilisateur_mdp = $utilisateur_login = $utilisateur_mail = $utilisateur_nom 
+    $utilisateur_mdp = $utilisateur_login = $utilisateur_mail = $utilisateur_nom 
     = $utilisateur_prenom = $utilisateur_adr_num_rue = $utilisateur_adr_cp = $utilisateur_tel 
     = $ville_id = $role_id = '';
+
+    $utilisateur_mdpOld = $utilisateur_loginOld = $utilisateur_mailOld = $utilisateur_nomOld 
+    = $utilisateur_prenomOld = $utilisateur_adr_num_rueOld = $utilisateur_adr_cpOld = $utilisateur_telOld 
+    = $ville_idOld = $role_idOld = '';
 
     // ISSETS ...................................................................................... //
     if(isset($_GET['action'])) {
@@ -27,7 +31,19 @@ require('modeles/Connect.class.php');
 
     if (isset($_POST['needle'])) { $needle = $_POST['needle']; }
 
+    if (isset($_POST['mdpOld'])) { $utilisateur_mdpOld = $_POST['mdpOld']; }
+    if (isset($_POST['loginOld'])) { $utilisateur_loginOld = $_POST['loginOld']; }
+    if (isset($_POST['mailOld'])) { $utilisateur_mailOld = $_POST['mailOld']; }
+    if (isset($_POST['nomOld'])) { $utilisateur_nomOld = $_POST['nomOld']; }
+    if (isset($_POST['prenomOld'])) { $utilisateur_prenomOld = $_POST['prenomOld']; }
+    if (isset($_POST['adrOld'])) { $utilisateur_adr_num_rueOld = $_POST['adrOld']; }
+    if (isset($_POST['cpOld'])) { $utilisateur_adr_cpOld = $_POST['cpOld']; }
+    if (isset($_POST['telOld'])) { $utilisateur_telOld = $_POST['telOld']; }
+    if (isset($_POST['villeOld'])) { $ville_idOld = $_POST['villeOld']; }
+    if (isset($_POST['roleOld'])) { $role_idOld = $_POST['roleOld']; }
+
     if (isset($_POST['id'])) { $utilisateur_id = $_POST['id']; }
+    
     if (isset($_POST['mdp'])) { $utilisateur_mdp = $_POST['mdp']; }
     if (isset($_POST['login'])) { $utilisateur_login = $_POST['login']; }
     if (isset($_POST['mail'])) { $utilisateur_mail = $_POST['mail']; }
@@ -69,6 +85,33 @@ require('modeles/Connect.class.php');
                 require('vues/compte_admin_2center.php'); 
                 require('vues/index_3footer.php');
             break;
+        
+        // C - CREATE ------------------------------------------------------------------------------ //
+
+        case 'ajout':
+            $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
+            $info = '<h3 class=" text-nowrap">' . 'Creation utilistaeur' . '</h3>';
+            $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
+            // print_r($_REQUEST);
+                require('vues/index_1header.php');
+                require('vues/form.php');
+                require('vues/index_3footer.php');
+            break;    
+        
+        case 'confirmAjout':
+            $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
+            $info = '<h3 class=" text-nowrap">' . 'Création réussie' . '</h3>';
+            $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
+            ajoutUser ($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
+            $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
+            $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
+            $ville_id,$role_id);
+                require('vues/index_1header.php');
+                require('vues/affichage.php');
+                require('vues/index_3footer.php');
+        break;
+
+        // R - READ -------------------------------------------------------------------------------- //
 
         case 'affichageUsers' :
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
@@ -99,21 +142,22 @@ require('modeles/Connect.class.php');
                 require('vues/index_3footer.php');
             break;
 
-        case 'ajout':
+        // U - UPDATE ------------------------------------------------------------------------------ //
+
+        case 'modifUser':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Creation utilistaeur' . '</h3>';
+            $info = '<h3 class=" text-nowrap">' . 'Modification d\'utilisateur' . '</h3>';
             $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
-            // print_r($_REQUEST);
                 require('vues/index_1header.php');
                 require('vues/form.php');
                 require('vues/index_3footer.php');
-            break;    
-        
-        case 'confirmAjout':
+        break;    
+
+        case 'confirmmodifUser':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Création réussie' . '</h3>';
+            $info = '<h3 class=" text-nowrap">' . 'Modification d\'utilisateur réussi' . '</h3>';
             $header_info = '<h2>' . 'Nom d\'Utilisateur' . '</h2>';
-            ajoutUser ($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
+            modifyUser($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
             $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
             $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
             $ville_id,$role_id);
@@ -121,6 +165,8 @@ require('modeles/Connect.class.php');
                 require('vues/affichage.php');
                 require('vues/index_3footer.php');
         break;
+
+        // D - DELETE ------------------------------------------------------------------------------ //
 
         case 'supprimer':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
@@ -131,8 +177,9 @@ require('modeles/Connect.class.php');
                 require('vues/affichage.php');
                 require('vues/index_3footer.php');
             break;
+
     }
 
- ?>
+?>
 
 <!-- THIS IS INDEX CONTROLER -->

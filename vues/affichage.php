@@ -40,8 +40,10 @@
 
                                         echo $tResults;
                                         
-                                        echo "<form method='POST' action='index.php?action=modifbd'>
+                                        echo "<form method='POST' action='index.php?action=modifUser'>
+
                                         <input type='submit' value='Modifier'>
+
                                             <input type='hidden' name='id' value='" .$tResults->getID(). "'>
                                             <input type='hidden' name='mdpOld' value='" .$tResults->getMDP(). "'>
                                             <input type='hidden' name='loginOld' value='" .$tResults->getLOGIN(). "'>
@@ -53,12 +55,15 @@
                                             <input type='hidden' name='telOld' value='" .$tResults->getTEL(). "'>
                                             <input type='hidden' name='villeOld' value='" .$tResults->getVILLE(). "'>
                                             <input type='hidden' name='roleOld' value='" .$tResults->getROLE(). "'>
+
                                         </form>";
                                         
                                         echo "<br />";
 
                                         echo "<form method='POST' action='index.php?action=supprimer'>
+
                                             <input type='submit' value='Supprimer'>
+
                                             <input type='hidden' name='id' value='" .$tResults->getID(). "'>
                                             <input type='hidden' name='mdp' value='" .$tResults->getMDP(). "'>
                                             <input type='hidden' name='login' value='" .$tResults->getLOGIN(). "'>
@@ -70,7 +75,9 @@
                                             <input type='hidden' name='tel' value='" .$tResults->getTEL(). "'>
                                             <input type='hidden' name='ville' value='" .$tResults->getVILLE(). "'>
                                             <input type='hidden' name='role' value='" .$tResults->getROLE(). "'>
+                                            
                                         </form>";
+
                                         }
                         } else {
                             foreach($liste as $tResults) {
