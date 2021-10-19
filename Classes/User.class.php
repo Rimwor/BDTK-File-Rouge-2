@@ -141,16 +141,47 @@
          * @return string
          */
         public function __toString() {
-            $message = "<b>" . "USER : " . "</b>" . $this->getNOM() . " " . $this->getPRENOM() . "<br />"
-                                                                    . "<b>" . "ID : " . "</b>" . $this->getID() . "<br />"
-                                                                    . "<b>" . "MOT DE PASSE : " . "</b>" . $this->getMDP() . "<br />"
-                                                                    . "<b>" . "LOGIN : " . "</b>" . $this->getLOGIN() . "<br />"
-                                                                    . "<b>" . "MAIL : " . "</b>" . $this->getMAIL() . "<br />"
-                                                                    . "<b>" . "ADRESSE : " . "</b>" . $this->getADR() . "<br />"
-                                                                    . "<b>" . "CODE POSTALE : " . "</b>" . $this->getCP() . "<br />"
-                                                                    . "<b>" . "VILLE ID : " . "</b>" . $this->getVILLE() . "<br />"
-                                                                    . "<b>" . "TEL : " . "</b>" . $this->getTEL() . "<br />"
-                                                                    . "<b>" . "ROLE : " . "</b>" . $this->getROLE() . "<br />" . "<br />";
+            $message = 
+                        "<form method='POST' action='index.php?action=affichageDetails'>"
+                        . "<table class='table table-striped table-light'>"
+
+                            . "<thead>"
+
+                                . "<tr>"
+                                    . "<th scope='col'>" . "Nom" . "</th>"
+                                    . "<th scope='col'>" . "Prenom" . "</th>"
+                                    . "<th scope='col'>" . "Mail" . "</th>"
+                                    . "<th scope='col'>" . "Tel" . "</th>"
+                                    . "<th scope='col'>" . "Role" . "</th>"
+                                    . "<th scope='col'>" . "Détails" . "</th>"
+                                . "</tr>"
+
+                            . "</thead>"
+
+                            . "<tbody>"
+
+                                . "<td>" . $this->getNOM() . "</td>"
+                                . "<td>" . $this->getPRENOM() . "</td>"
+                                . "<td>" . $this->getMAIL() . "</td>"
+                                . "<td>" . $this->getTEL() . "</td>"
+                                . "<td>" . $this->getROLE() . "</td>"
+                                . "<input type='hidden' name='id' value='" . $this->getID() . "'>"
+                                . "<input type='hidden' name='mdp' value='" . $this->getMDP() . "'>"
+                                . "<input type='hidden' name='login' value='" . $this->getLOGIN() . "'>"
+                                . "<input type='hidden' name='mail' value='" . $this->getMAIL() . "'>"
+                                . "<input type='hidden' name='nom' value='" . $this->getNOM() . "'>"
+                                . "<input type='hidden' name='prenom' value='" . $this->getPRENOM() . "'>"
+                                . "<input type='hidden' name='adr' value='" . $this->getADR() . "'>"
+                                . "<input type='hidden' name='cp' value='" . $this->getCP() . "'>"
+                                . "<input type='hidden' name='tel' value='" . $this->getTEL() . "'>"
+                                . "<input type='hidden' name='ville' value='" . $this->getVILLE() . "'>"
+                                . "<input type='hidden' name='role' value='" . $this->getROLE() . "'>"
+                                . "<td>" . "<input type='submit' value='voir'>" . "</td>"
+                            . "</tbody>"
+
+                        . "</table>"
+                        . "</form>";
+
             return $message;
         }
     }
