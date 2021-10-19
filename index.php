@@ -79,7 +79,8 @@ require('modeles/Connect.class.php');
         case 'admin': // PAGE ADMINISTRATEUR
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Gestion Utilisateurs' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
 
                 require('vues/index_1header.php'); 
                 require('vues/compte_admin_2center.php'); 
@@ -91,7 +92,8 @@ require('modeles/Connect.class.php');
         case 'ajout':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Creation utilistaeur' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             // print_r($_REQUEST);
                 require('vues/index_1header.php');
                 require('vues/form.php');
@@ -101,7 +103,8 @@ require('modeles/Connect.class.php');
         case 'confirmAjout':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Création réussie' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur : Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             ajoutUser ($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
             $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
             $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
@@ -116,7 +119,8 @@ require('modeles/Connect.class.php');
         case 'affichageUsers' :
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'List d\'utilisateurs' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             $listUsers = getListUsers();
                 require('vues/index_1header.php'); 
                 require('vues/affichage.php'); 
@@ -126,7 +130,8 @@ require('modeles/Connect.class.php');
         case 'recherche':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Recherche un utilisateur' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
                 require('vues/index_1header.php');
                 require('vues/form.php');
                 require('vues/index_3footer.php');
@@ -135,7 +140,8 @@ require('modeles/Connect.class.php');
         case 'search_result':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Resultat du recherche' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             $liste = recherche($needle);
                 require('vues/index_1header.php');
                 require('vues/affichage.php');
@@ -147,7 +153,8 @@ require('modeles/Connect.class.php');
         case 'modifUser':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Modification d\'utilisateur' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
                 require('vues/index_1header.php');
                 require('vues/form.php');
                 require('vues/index_3footer.php');
@@ -156,7 +163,8 @@ require('modeles/Connect.class.php');
         case 'confirmmodifUser':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Modification d\'utilisateur réussi' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             modifyUser($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
             $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
             $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
@@ -171,7 +179,8 @@ require('modeles/Connect.class.php');
         case 'supprimer':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Suppression d\'utilisateur réussi' . '</h3>' . '<br />';
-            $header_info = '<h2>' . 'Administrateur : Alexandre Chevalier' . '</h2>';
+            $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
+            $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             delUser($utilisateur_id);
                 require('vues/index_1header.php');
                 require('vues/affichage.php');

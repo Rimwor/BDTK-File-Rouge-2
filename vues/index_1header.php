@@ -34,8 +34,8 @@
         <div class="col mt-3 align-middle align-self-center text-nowrap">
         <?php echo $header_info ?>
         </div>
-        <div class="col">
-        <!-- empty -->
+        <div class="col mt-3 align-middle align-self-center text-nowrap">
+        <?php echo $user_info ?>
         </div>
         <div class="col-md-3 col-lg-2 mr-1 d-flex align-items-end flex-column">
             <a href="index.php"><button id="btnback" name="back" class="btn btn-light btn-sm mt-1 btn-block">Déconnexion</button></a>
