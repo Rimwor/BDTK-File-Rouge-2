@@ -93,7 +93,9 @@
                             $tCibles[] = $user;
                         }
                     }
-                    
+                    if(count($tCibles) === 0) {
+                            echo "Aucun resultat";
+                    }
                     return $tCibles;
         }
 
