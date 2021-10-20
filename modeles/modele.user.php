@@ -23,7 +23,7 @@
                            $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
                            $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
                            $ville_id,$role_id) {
-var_dump($_REQUEST);
+// var_dump($_REQUEST);
                 $sql = "INSERT INTO utilisateur (utilisateur_id, utilisateur_mdp, utilisateur_login, utilisateur_mail,
                                                  utilisateur_nom, utilisateur_prenom, utilisateur_adr_num_rue,
                                                  utilisateur_adr_cp, utilisateur_tel, ville_id, role_id) 

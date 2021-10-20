@@ -24,8 +24,8 @@
                     <div class="mt-5">
                     <p>
                         <li><a href="index.php?action=affichageUsers"><button class="mb-2">Liste d'Utilisateurs</button></a></li>
-                        <li><a href="index.php?action=recherche"><button class="mb-2">Utilisateurs : Recherche</button></a></li>
-                        <li><a href="index.php?action=ajout"><button class="mb-2">Utilisateur : Creation</button></a></li>
+                        <li><a href="index.php?action=recherche"><button class="mb-2">Rechercher un utilisateur</button></a></li>
+                        <li><a href="index.php?action=ajout"><button class="mb-2">Créer un utilisateur</button></a></li>
                     </p>
                     </div>
                     
