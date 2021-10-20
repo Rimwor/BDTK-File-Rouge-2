@@ -31,7 +31,7 @@
                             echo "<br />";
 
                             echo '  <form action="index.php?action=search_result" method="POST">
-                                        <p><input type="text" name="needle"></p>
+                                        <p><input type="text" name="needle" required></p>
                                         <input type="submit" value="Rechercher un user ...">
                                     </form>';
 
