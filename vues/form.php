@@ -91,20 +91,20 @@
 
                                             <form action="index.php?action=confirmAjout" method="POST">
                                                 
-                                                <p><label>Mot de passe : &nbsp</label><input type="text" name="mdp"></p>
-                                                <p><label>Login : &nbsp</label><input type="text" name="login"></p>
-                                                <p><label>Mail : &nbsp</label><input type="text" name="mail"></p>
-                                                <p><label>Nom : &nbsp</label><input type="text" name="nom"></p>
-                                                <p><label>Prenom : &nbsp</label><input type="text" name="prenom"></p>
-                                                <p><label>Adresse : &nbsp</label><input type="text" name="adr"></p>
-                                                <p><label>Code Postal : &nbsp</label><input type="text" name="cp"></p>
-                                                <p><label>Tel : &nbsp</label><input type="text" name="tel"></p>
-                                                <p><label>Ville Id : &nbsp</label><input type="text" name="ville"></p>
+                                                <p><label>Mot de passe : &nbsp</label><input type="text" name="mdp" required></p>
+                                                <p><label>Login : &nbsp</label><input type="text" name="login" required></p>
+                                                <p><label>Mail : &nbsp</label><input type="text" name="mail" required></p>
+                                                <p><label>Nom : &nbsp</label><input type="text" name="nom" required></p>
+                                                <p><label>Prenom : &nbsp</label><input type="text" name="prenom" required></p>
+                                                <p><label>Adresse : &nbsp</label><input type="text" name="adr" required></p>
+                                                <p><label>Code Postal : &nbsp</label><input type="text" name="cp" required></p>
+                                                <p><label>Tel : &nbsp</label><input type="text" name="tel" required></p>
+                                                <p><label>Ville Id : &nbsp</label><input type="text" name="ville" required></p>
                                                  
                                                 <p><div class="input-group mb-2"><label>Role Id : &nbsp
                                                                                  </label><div class="col-3">
-                                                                                 <select name="role" class="form-control">
-                                                                                <option selected>Sélectionner...</option>
+                                                                                 <select name="role" class="form-control" required>
+                                                                                <option>Sélectionner...</option>
                                                                                 <option value="adher">adher</option>
                                                                                 <option value="admin">admin</option>
                                                                                 <option value="bibli">bibli</option>
