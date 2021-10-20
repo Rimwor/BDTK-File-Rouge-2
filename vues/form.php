@@ -101,27 +101,30 @@
                                                 <p><label>Code Postal : &nbsp</label><input type="text" name="cp"></p>
                                                 <p><label>Tel : &nbsp</label><input type="text" name="tel"></p>
                                                 <p><label>Ville Id : &nbsp</label><input type="text" name="ville"></p>
+                                                 
                                                 <p><div class="input-group mb-2"><label>Role Id : &nbsp
-                                                                                 </label><div class="col-3"><select class="form-control">
-                                                                                                            <option selected>Sélectionner...</option>
-                                                                                                            <option>adher</option>
-                                                                                                            <option>admin</option>
-                                                                                                            <option>bibli</option>
-                                                                                                            <option>gesti</option>
-                                                                                                            <option>respo</option>
-                                                                                                            </select></div></div></p>
-
-                                                <input type="submit" value="Ajouter">
-
+                                                                                 </label><div class="col-3">
+                                                                                 <select name="role" class="form-control">
+                                                                                <option selected>Sélectionner...</option>
+                                                                                <option value="adher">adher</option>
+                                                                                <option value="admin">admin</option>
+                                                                                <option value="bibli">bibli</option>
+                                                                                <option value="gesti">gesti</option>
+                                                                                <option value="respo">respo"</option>
+                                                                                </select></div></div></p>
+                                                                                             
+                                                <input type="submit" name="save_select" value="Ajouter">
+                                                
                                             </form>
 
-                                        </div>
-                                    </section>
-                                ';
+                                    </div>
+                                    </section>';
+                                           
                         } 
 
                     ?>
-
+                                                
+                    <!-- <p><div class="input-group mb-2" name="role"><label>Role Id : &nbsp // Role ID input --> 
                 </div>  
             </div>
 
