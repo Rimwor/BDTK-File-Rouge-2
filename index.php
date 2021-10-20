@@ -102,10 +102,19 @@ require('modeles/Connect.class.php');
         
         case 'confirmAjout':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Création réussie' . '</h3>';
+
+            if (ajoutUser($utilisateur_mdp, $utilisateur_login,
+            $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
+            $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
+            $ville_id,$role_id) == true) {
+                $info = '<h3 class=" text-nowrap">' . 'Création réussie' . '</h3>';
+            } else {
+                $info = '<h3 class=" text-nowrap">' . 'L\'utilisateur existe déjà' . '</h3>';
+            }
+            
             $header_info = '<h2>' . '&nbsp Administrateur : Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
-            ajoutUser ($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
+            ajoutUser ($utilisateur_mdp, $utilisateur_login,
             $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
             $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
             $ville_id,$role_id);

@@ -90,8 +90,7 @@
                                         <div style="text-align:left" class="scroll_window_1 overflow-auto">
 
                                             <form action="index.php?action=confirmAjout" method="POST">
-
-                                                <p><label>ID : &nbsp</label><input type="text" name="id"></p>
+                                                
                                                 <p><label>Mot de passe : &nbsp</label><input type="text" name="mdp"></p>
                                                 <p><label>Login : &nbsp</label><input type="text" name="login"></p>
                                                 <p><label>Mail : &nbsp</label><input type="text" name="mail"></p>
@@ -125,6 +124,7 @@
                     ?>
                                                 
                     <!-- <p><div class="input-group mb-2" name="role"><label>Role Id : &nbsp // Role ID input --> 
+                    <!-- <p><label>ID : &nbsp</label><input type="text" name="id"></p> // User ID input -->
                 </div>  
             </div>
 

@@ -19,18 +19,21 @@
          * @param string $role_id
          * @return void
          */
-        function ajoutUser($utilisateur_id, $utilisateur_mdp, $utilisateur_login,
+        function ajoutUser($utilisateur_mdp, $utilisateur_login,
                            $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
                            $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
                            $ville_id,$role_id) {
 // var_dump($_REQUEST);
+                try {
+                        
                 $sql = "INSERT INTO utilisateur (utilisateur_id, utilisateur_mdp, utilisateur_login, utilisateur_mail,
                                                  utilisateur_nom, utilisateur_prenom, utilisateur_adr_num_rue,
                                                  utilisateur_adr_cp, utilisateur_tel, ville_id, role_id) 
-                        VALUES (:id, :mdp, :login, :mail, :nom, :prenom, :adr, :cp, :tel, :ville, :role)";
+                        VALUES (fn_ajout_user(), :mdp, :login, :mail, :nom, :prenom, :adr, :cp, :tel, :ville, :role)";
                 $connexion = Connect_bdtk::getConnexion();
                 $ajout = $connexion->prepare($sql);
-                $ajout->execute(array(':id'=>$utilisateur_id, 
+
+                        $ajout->execute(array(
                                       ':mdp'=>$utilisateur_mdp, 
                                       ':login'=>$utilisateur_login,
                                       ':mail'=>$utilisateur_mail,
@@ -41,8 +44,14 @@
                                       ':tel'=>$utilisateur_tel,
                                       ':ville'=>$ville_id,
                                       ':role'=>$role_id));
+                                      return true;
+                } catch (PDOException $e) {
+                        $e->getMessage();
+                        return false;
+                } 
+                                
             }
-
+            
         // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
         
         /**
