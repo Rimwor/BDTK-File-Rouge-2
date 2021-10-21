@@ -93,6 +93,7 @@
                             $tCibles[] = $user;
                         }
                     }
+                    
                     if(count($tCibles) === 0) {
                             echo "";
                     }
@@ -121,26 +122,35 @@
                             $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
                             $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
                             $ville_id,$role_id) {
-        $sql = "UPDATE utilisateur SET `utilisateur_mdp` = :mdp,
-                                       `utilisateur_login` = :login, `utilisateur_mail` = :mail,
-                                       `utilisateur_nom` = :nom, `utilisateur_prenom` = :prenom,
-                                       `utilisateur_adr_num_rue` = :adr, `utilisateur_adr_cp` = :cp,
-                                       `utilisateur_tel` = :tel, `ville_id` = :ville, `role_id` = :role 
-                                       WHERE `utilisateur_id` = :id";
-        $connexion = Connect_bdtk::getConnexion();
-        $maj = $connexion->prepare($sql);
-        $maj->execute(array(':id'=>$utilisateur_id, 
-                            ':mdp'=>$utilisateur_mdp, 
-                            ':login'=>$utilisateur_login,
-                            ':mail'=>$utilisateur_mail,
-                            ':nom'=>$utilisateur_nom,
-                            ':prenom'=>$utilisateur_prenom,
-                            ':adr'=>$utilisateur_adr_num_rue,
-                            ':cp'=>$utilisateur_adr_cp,
-                            ':tel'=>$utilisateur_tel,
-                            ':ville'=>$ville_id,
-                            ':role'=>$role_id));
+        try {
+                $sql = "UPDATE utilisateur SET `utilisateur_mdp` = :mdp,
+                                        `utilisateur_login` = :login, `utilisateur_mail` = :mail,
+                                        `utilisateur_nom` = :nom, `utilisateur_prenom` = :prenom,
+                                        `utilisateur_adr_num_rue` = :adr, `utilisateur_adr_cp` = :cp,
+                                        `utilisateur_tel` = :tel, `ville_id` = :ville, `role_id` = :role 
+                                        WHERE `utilisateur_id` = :id";
+                $connexion = Connect_bdtk::getConnexion();
+                $maj = $connexion->prepare($sql);
+                $maj->execute(array(':id'=>$utilisateur_id, 
+                                ':mdp'=>$utilisateur_mdp, 
+                                ':login'=>$utilisateur_login,
+                                ':mail'=>$utilisateur_mail,
+                                ':nom'=>$utilisateur_nom,
+                                ':prenom'=>$utilisateur_prenom,
+                                ':adr'=>$utilisateur_adr_num_rue,
+                                ':cp'=>$utilisateur_adr_cp,
+                                ':tel'=>$utilisateur_tel,
+                                ':ville'=>$ville_id,
+                                ':role'=>$role_id));
+
+                                return true;
+        } catch (PDOException $e) {
+                $e->getMessage();
+                return false;
+        }
+                
         
+                            
         }
 
         // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
