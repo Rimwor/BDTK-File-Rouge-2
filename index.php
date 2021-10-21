@@ -202,7 +202,14 @@ require('modeles/Connect.class.php');
 
         case 'supprimer':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Suppression d\'utilisateur réussi' . '</h3>';
+            if (delUser($utilisateur_id) == true) {
+                $info = '<h3 class=" text-nowrap">' . 'Suppression d\'utilisateur réussi' . '</h3>';
+            } else {
+                $info = '<h3 class=" text-nowrap">' . 'Cotisation en cours'
+                             . '<br /><br /><br />' . 'ou Compte ADMIN'
+                             . '<br /><br /><br />' . 'Suppression impossible' . '</h3>';
+            }
+            
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             delUser($utilisateur_id);

@@ -152,10 +152,17 @@
          * @return void
          */
         function delUser($utilisateur_id) {
-        $sql = "DELETE FROM utilisateur WHERE utilisateur_id = :id";
-        $connexion = Connect_bdtk::getConnexion();
-        $delUser = $connexion->prepare($sql);
-        $delUser->execute(array(':id'=>$utilisateur_id));
+                try {
+                        $sql = "DELETE FROM utilisateur WHERE utilisateur_id = :id";
+                        $connexion = Connect_bdtk::getConnexion();
+                        $delUser = $connexion->prepare($sql);
+                        $delUser->execute(array(':id'=>$utilisateur_id));
+                        return true;        
+                } catch (PDOException $e) {
+                        $e->getMessage();
+                        return false;
+                }
+        
         }
 
 ?>
