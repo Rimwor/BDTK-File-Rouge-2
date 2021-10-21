@@ -94,7 +94,7 @@
                         }
                     }
                     if(count($tCibles) === 0) {
-                            echo "Aucun resultat";
+                            echo "";
                     }
                     return $tCibles;
         }

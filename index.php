@@ -158,7 +158,12 @@ require('modeles/Connect.class.php');
 
         case 'search_result':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
-            $info = '<h3 class=" text-nowrap">' . 'Resultat du recherche' . '</h3>';
+            if (recherche($needle) == true) {
+              $info = '<h3 class=" text-nowrap">' . 'Resultat du recherche' . '</h3>';  
+            } else {
+                $info = '<h3 class=" text-nowrap">' . 'Aucun resultat' . '</h3>';
+            }
+            
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
             $liste = recherche($needle);
