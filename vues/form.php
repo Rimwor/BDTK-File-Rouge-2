@@ -48,6 +48,7 @@
 
                                             <form action='index.php?action=confirmmodifUser' method='POST'>
 
+                                                <p><label>ID : &nbsp</label><input type='text' readonly name='id' value='" .$_POST['id']. "'></p>
                                                 <p><label>Mot de passe : &nbsp</label><input type='text' name='mdp' value='".$_POST['mdpOld']."'></p>
                                                 <p><label>Login : &nbsp</label><input type='text' name='login' value='".$_POST['loginOld']."'></p>
                                                 <p><label>Mail : &nbsp</label><input type='text' name='mail' value='".$_POST['mailOld']."'></p>
@@ -57,7 +58,7 @@
                                                 <p><label>Code Postal : &nbsp</label><input type='text' name='cp' value='".$_POST['cpOld']."'></p>
                                                 <p><label>Tel : &nbsp</label><input type='text' name='tel' value='".$_POST['telOld']."'></p>
                                                 <p><label>Ville Id : &nbsp</label><input type='text' name='ville' value='".$_POST['villeOld']."'></p>
-                                                <p><label>Role Id : &nbsp</label><input type='text' name='role' value='".$_POST['roleOld']."'></p>
+                                                <p><label>Role Id : &nbsp</label><input type='text' readonly name='role' value='".$_POST['roleOld']."'></p>
 
                                                 <input type='hidden' name='id' value='" .$_POST['id']. "'>
                                                 <input type='hidden' name='mdpOld' value='".$_POST['mdpOld']."' />
