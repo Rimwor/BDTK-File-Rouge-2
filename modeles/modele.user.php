@@ -1,5 +1,3 @@
-<!-- THIS IS MODELE with FUNCTIONS -->
-
 <?php
         // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //
 
@@ -23,7 +21,6 @@
                            $utilisateur_mail, $utilisateur_nom, $utilisateur_prenom,
                            $utilisateur_adr_num_rue,$utilisateur_adr_cp,$utilisateur_tel,
                            $ville_id,$role_id) {
-// var_dump($_REQUEST);
                 try {
                         
                 $sql = "INSERT INTO utilisateur (utilisateur_id, utilisateur_mdp, utilisateur_login, utilisateur_mail,
@@ -68,10 +65,8 @@
                 'utilisateur_prenom', 'utilisateur_adr_num_rue', 
                 'utilisateur_adr_cp', 'utilisateur_tel', 'ville_id', 'role_id'));
                 $resultats = $results->fetchAll();
-        // var_dump($resultats);
                 $results->closeCursor();
                 Connect_bdtk::disconnect();
-        // var_dump($resultats);
                 return $resultats;
                 }
 
@@ -86,7 +81,6 @@
         function recherche($needle) {
                 $listUsers = getListUsers();
         
-                // var_dump($listeBDs);
                 $tCibles = array();
                         foreach ($listUsers as $user) {
                         if (stristr($user, $needle) ) {
@@ -104,7 +98,7 @@
 
         /**
          * MODIFY A USER
-         *
+         * Beata
          * @param string $utilisateur_id
          * @param string $utilisateur_mdp
          * @param string $utilisateur_login
@@ -176,5 +170,3 @@
         }
 
 ?>
-
-<!-- THIS IS MODELE with FUNCTIONS -->

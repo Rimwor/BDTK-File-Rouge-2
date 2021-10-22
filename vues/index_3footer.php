@@ -1,5 +1,5 @@
-<!-- THIS IS FOOTER -->
 <?php if ($action != 'accueil') { ?> 
+<!-- Beata -->
 <footer>
     <div class="fixed-bottom">
     <div class="row ml-15 mr-15 align-self-auto bg-secondary bg-opacity-75">
@@ -26,7 +26,4 @@
 </footer>
 <?php } ?>
 <!-- ======================================================== END ================================================================== -->
-
 </html>
-
-<!-- THIS IS FOOTER -->

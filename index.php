@@ -1,15 +1,11 @@
-<!-- THIS IS INDEX CONTROLER -->
-
 <?php
-
+// Beata
 spl_autoload_register(function($classe){
     include "Classes/".$classe.".class.php";
 });
 
 require('modeles/modele.user.php');
 require('modeles/Connect.class.php');
-
-// var_dump($_REQUEST);
 
     // PARAMETERS ================================================================================== //
     
@@ -55,10 +51,6 @@ require('modeles/Connect.class.php');
     if (isset($_POST['ville'])) { $ville_id = $_POST['ville']; }
     if (isset($_POST['role'])) { $role_id = $_POST['role']; }
 
-    // ECHOs ....................................................................................... //
-    // echo 'ACTION : '. $action . "<br />\n";
-    // echo 'GET : ' ; print_r($_GET) ; echo "<br />";
-    // echo 'POST : ' ; print_r($_POST) ; echo "<br />";
     Connect_bdtk::getConnexion();
     getListUsers();
 
@@ -70,7 +62,6 @@ require('modeles/Connect.class.php');
             $title = 'Bienvenue à la bédéthèque de Stockholm';
             $info = '';
             $header_info = '';
-
                 require('vues/index_1header.php'); 
                 require('vues/index_2center.php'); 
                 require('vues/index_3footer.php');
@@ -81,20 +72,17 @@ require('modeles/Connect.class.php');
             $info = '<h3 class=" text-nowrap">' . 'Gestion Utilisateurs' . '</h3>' . '<br/>';
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
-
                 require('vues/index_1header.php'); 
                 require('vues/compte_admin_2center.php'); 
                 require('vues/index_3footer.php');
             break;
         
         // C - CREATE ------------------------------------------------------------------------------ //
-
         case 'ajout':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Creation utilisateur' . '</h3>';
             $header_info = '<h2>' . '&nbsp Administrateur' . '</h2>';
             $user_info = '<h2>' . '&nbsp Alexandre Chevalier' . '</h2>';
-            // print_r($_REQUEST);
                 require('vues/index_1header.php');
                 require('vues/form.php');
                 require('vues/index_3footer.php');
@@ -124,7 +112,6 @@ require('modeles/Connect.class.php');
         break;
 
         // R - READ -------------------------------------------------------------------------------- //
-
         case 'affichageUsers' :
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Liste d\'utilisateurs' . '</h3>';
@@ -173,7 +160,6 @@ require('modeles/Connect.class.php');
             break;
 
         // U - UPDATE ------------------------------------------------------------------------------ //
-
         case 'modifUser':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             $info = '<h3 class=" text-nowrap">' . 'Modification d\'utilisateur' . '</h3>';
@@ -209,7 +195,6 @@ require('modeles/Connect.class.php');
         break;
 
         // D - DELETE ------------------------------------------------------------------------------ //
-
         case 'supprimer':
             $title = 'Compte Administrateur | Bienvenue à la bédéthèque de Stockholm';
             if (delUser($utilisateur_id) == true) {
@@ -231,5 +216,3 @@ require('modeles/Connect.class.php');
     }
 
 ?>
-
-<!-- THIS IS INDEX CONTROLER -->

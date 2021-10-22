@@ -24,7 +24,6 @@
                 $mysqlPDO = new PDO($dsn, $user, $password,
                                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             Connect_bdtk::$connexion = $mysqlPDO;
-        // echo "Connecté !";
             return Connect_bdtk::$connexion;
             }
             else echo "Fichier Params Introuvable";

@@ -1,15 +1,7 @@
-<!-- THIS IS COMPTE (ADMIN) CENTER -->
-
 <body>
-
+<!-- Beata -->
     <body background="assets/img/bdthequebackground1.jpg" alt="background">
 
-        <!-- HEADER .................................................................................................................... -->
-        <!-- <header>
-            <a href="help.html" target="_blank">
-                <img src="assets\img\help.png" class="img_help ml-1 mt-1" alt="help" />
-            </a>
-        </header> -->
 
         <!-- MAIN CONTAINER ............................................................................................................ -->
         <div class="container-fluid">
@@ -50,5 +42,3 @@
             <script src="assets/js/metro.js"></script>
             <script src="assets/js/all.js"></script>
 </body>
-
-<!-- THIS IS COMPTE (ADMIN) CENTER -->

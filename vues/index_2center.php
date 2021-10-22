@@ -1,7 +1,5 @@
-<!-- THIS IS INDEX CENTER -->
-
 <body>
-
+<!-- Beata -->
     <body background="assets/img/bdthequebackground.jpg" alt="background">
 
         <!-- HEADER .................................................................................................................... -->
@@ -72,5 +70,3 @@
             <script src="assets/js/metro.js"></script>
             <script src="assets/js/all.js"></script>
 </body>
-
-<!-- THIS IS INDEX CENTER -->
